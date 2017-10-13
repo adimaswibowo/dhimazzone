@@ -1,0 +1,29 @@
+<ion-view cache-view="false" view-title="{{'acc_history'|translate}}">
+	<ion-content class="simobi-background-content">
+		<form >		
+				<div ng-controller="historyInputCtrl"   class="list list-inset">
+					<table class="item item-input">
+
+					<label class="item item-input">
+		              	<i class="icon ion-search placeholder-icon"></i>
+		              	<input type="text" ng-model="queryAccountList" name='accountNumber' id='accountNumber' ng-click="openPopupAccounttList();" placeholder="{{'search_account' |translate}}" size="41">
+		          	</label>
+		          	<div ng-show="hiddenInputBillpay == 'true'"> 
+		            	<input ng-model='accountNumberSelect' type='text' style="visibility: hidden;" name='accountNumberHidden' id	='accountNumberHidden'/>
+		          	</div>		
+
+						<tr>
+							<td>
+								<input class="button button-small button-assertive" type="button" name="submitHistory" id="submitHistory" value="Submit" ng-click="doHistory()" />
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+		  	</form>
+		  	<div class="footer-space"/>
+	</ion-content>
+</ion-view>
+		

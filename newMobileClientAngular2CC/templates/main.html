@@ -1,0 +1,377 @@
+<ion-view cache-view="false" view-title="{{title}}">
+  <ion-content class="simobi-background-content">
+<!--     <ion-list> -->
+<!--       <ion-item ng-repeat="mainMenu in mainMenus | inArray:filterBy:'lvlMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu)"> -->
+<!--         {{mainMenu.name}} -->
+<!-- 	    </div> -->
+<!--       </ion-item> -->
+<!--     </ion-list> -->
+
+
+	<!-- 
+	yg lama
+	<div ng-if="showLogin == true">
+		<form ng-submit="doLogin()">
+	      <div class="list list-inset">
+	          <label class="item item-input">
+		         <input type="text" ng-if="isDevice == false" ng-model="loginData.username" placeholder="Enter Your Username">
+		         <input type="tel" ng-if="isDevice == true" ng-model="loginData.username" placeholder="Enter Your Mobile Number">
+	          </label>
+	          <label class="item item-input">
+		         <input type="password" ng-if="showPassword == false" ng-model="loginData.password" placeholder="Enter Your Password">
+		         <input type="text" ng-if="showPassword == true" ng-model="loginData.password" placeholder="Enter Your Password">
+	           	 <i id="showPassword" ng-class="{'text-wrap button button-icon button-clear ion-eye icon-simobi-ionic': !showPassword, 'text-wrap button button-icon button-clear ion-eye-disabled icon-simobi-ionic': showPassword}" on-tap="showPassword = !showPassword" ></i>
+	          </label> 
+	      </div>
+		  <div class="list list-inset">
+	        <button class="button button-block button-positive" type="submit">Log in</button>
+		  </div>
+	    </form>
+	</div> -->
+
+<table ng-if="showLogin == true" style="width=100%; margin: 0px auto;">
+	<tr>
+		<td ng-if="themeMode == 'standar' || themeMode == 'list' || themeMode == 'colorGrid'" align="center">
+			<img src="css/img/logo-amb.png" height="65px;">
+		</td>
+		<td ng-if="themeMode == 'style1'" align="center">
+			<img src="css/img/logo-amb.png" height="65px;">
+		</td>
+	</tr>
+</table>
+	<div ng-if="showLogin == true">
+
+		<form>
+<!-- 	      <div class="list list-inset-simobi"> -->
+<!-- 				<label class="item item-input-simobi"> -->
+		  <div class="list list-inset">
+ 			 <ion-checkbox color="dark" ng-if="isDevice == true" ng-model = "isCoporate" ng-change = "checkCorporate(isCoporate);">{{'ccLoginCorporateCaption1'|translate}}<br>{{'ccLoginCorporateCaption2'|translate}}</ion-checkbox>
+	          <label class="item item-input-simobi">
+                 <i ng-class="{'icon ion-android-person placeholder-icon': !isDevicePersonal, 'icon ion-android-phone-portrait placeholder-icon': isDevicePersonal}"></i>
+		         <input type="text" ng-if="isDevicePersonal == false" ng-model="loginData.username" placeholder="{{'enter_your_username'|translate}}">
+		         <input type="tel" ng-if="isDevicePersonal == true" ng-model="loginData.username" placeholder="{{'enter_your_mobile_number'|translate}}">
+	          </label>
+		  </div>
+<!-- 		  <div class="list list-inset-simobi"> -->
+<!-- 				<label class="item item-input-simobi"> -->
+		  <div class="list list-inset">
+	          <label class="item item-input-simobi">
+                 <i class="icon ion-locked placeholder-icon"></i>
+		         <input type="password" ng-if="showPassword == false" ng-model="loginData.password" my-enter="doLogin()" placeholder="{{'enter_your_password'|translate}}">
+		         <input type="text" ng-if="showPassword == true" ng-model="loginData.password" my-enter="doLogin()" placeholder="{{'enter_your_password'|translate}}">
+	           	 <i id="showPassword" ng-class="{'text-wrap button button-icon button-clear ion-eye icon-simobi-ionic': !showPassword, 'text-wrap button button-icon button-clear ion-eye-disabled icon-simobi-ionic ': showPassword}" on-tap="showPassword = !showPassword" ></i>
+	          </label> 
+	      </div>
+
+		  <div class="list list-inset-simobi">
+			<input type="button" class="button button-block button-positive" value="{{'login' | translate}}" ng-click="doLogin();"/>
+		  </div>
+	    </form>
+
+	   <!--  <form ng-if="themeMode == 'style1'" ng-submit="doLogin()">
+
+	      <div class="list list-inset-simobi">
+	          <label class="item item-input-simobi">
+                 <i ng-class="{'icon ion-android-person placeholder-icon placeholder-icon-white': !isDevice, 'icon ion-android-phone-portrait placeholder-icon placeholder-icon-white': isDevice}"></i>
+		         <input class="font-simobi-white placeholder-white" type="text" ng-if="isDevice == false" ng-model="loginData.username" placeholder="Enter Your Username">
+		         <input class="font-simobi-white placeholder-white" type="tel" ng-if="isDevice == true" ng-model="loginData.username" placeholder="Enter Your Mobile Number">
+	          </label>
+		  </div>
+		  <div class="list list-inset-simobi">
+	          <label class="item item-input-simobi">
+                 <i class="icon ion-locked placeholder-icon placeholder-icon-white"></i>
+		         <input class="font-simobi-white placeholder-white" type="password" ng-if="showPassword == false" ng-model="loginData.password" placeholder="Enter Your Password">
+		         <input class="font-simobi-white placeholder-white" type="text" ng-if="showPassword == true" ng-model="loginData.password" placeholder="Enter Your Password">
+	           	 <i id="showPassword" ng-class="{'text-wrap button button-icon button-clear ion-eye icon-simobi-ionic placeholder-icon-white': !showPassword, 'text-wrap button button-icon button-clear ion-eye-disabled icon-simobi-ionic placeholder-icon-white': showPassword}" on-tap="showPassword = !showPassword" ></i>
+	          </label> 
+	      </div>
+
+		  <div class="list list-inset-simobi">
+	        <button class="button button-block button-positive" type="submit">Log in</button>
+		  </div>
+	    </form> -->
+		
+		<br>
+
+		<!-- <div ng-if="themeMode == 'style1'" align="center" ng-controller="AppCtrl"> 
+	      <ks-swiper-container initial-slide="3" speed="50" loop="true" show-nav-buttons="false" slides-per-view="3" space-between="5" pagination-clickable="false" override-parameters="{effect: 'coverflow',coverflow: {rotate: 0,stretch: 0,depth: 500,modifier: 1,slideShadows : false}}"  on-ready="onReadySwiper(swiper)">
+	          <ks-swiper-slide class="swiper-slide" ng-repeat="mainMenu in mainMenus | inArray:filterBy:'extraMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+	              
+	              		<table ng-if="itIcon == true" style="margin: 0px auto;width:100px;height:100px;">
+	                        <tr>
+							  <td>
+	                            <img ng-src="css/img-app/{{mainMenu['icon']}}" width="100px;" height="100px;">
+	                          </td>
+	                        </tr>
+	                        <tr>
+	                          <td style="width:100px;white-space:normal;">
+	                           <p class="font-standar-carousel-small font-simobi-black">{{mainMenu.code | translate}}</p>
+	                          </td>
+	                        </tr>
+	                    </table>
+
+	                    <table ng-if="markomIcon == true" style="margin: 0px auto;width:100px;height:150px;">
+	                        <tr>
+	                          <td>
+	                            <img ng-src="css/img-app-markom-border/{{mainMenu['icon']}}" width="100px;" height="100px;">
+	                          </td>
+	                        </tr>
+	                        <tr>
+	                          <td style="width:100px;white-space:normal;">
+	                           <p class="font-style1-carousel-small font-simobi-white">{{mainMenu.code | translate}}</p>
+	                          </td>
+	                        </tr>
+	                    </table>
+	            </ks-swiper-slide>      
+	        </ks-swiper-container>
+	    </div> -->
+	</div>
+
+	<div ng-if="themeMode == 'list'">
+		<!-- <ion-list>
+            <ion-item class="itemSimobi" menu-close ng-repeat="mainMenu in mainMenus | inArray:filterBy:'lvlMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+              <table width='100%' border='0' cellspacing='0' cellpadding='0'>
+                  <tr>
+                    <td ng-if="itIcon == true" align="left" width="20%" style="vertical-align:top;">
+                      <img ng-src="css/img-app/{{mainMenu['icon']}}" width="55px" height="40px">
+                    </td>
+                    <td ng-if="darkIcon == true" align="left" width="20%" style="vertical-align:top;">
+                      <img ng-src="css/img-app-dark/{{mainMenu['icon']}}" width="55px" height="40px">
+                    </td>
+                    <td ng-if="markomIcon == true" align="left" width="20%" style="vertical-align:top;">
+                      <img ng-src="css/img-app/{{mainMenu['icon']}}" width="40px" height="40px">
+                    </td>
+
+                    <td align="left" width="70%" style="vertical-align:top;padding-top:10px;" class="font-simobi-black-childMenu">
+                   		 &nbsp;{{mainMenu.code | translate}}
+                    </td>
+                    <td align="center" width="10%" style="vertical-align:top;padding-top:10px;" >
+                    	&gt;
+                    </td>
+                  </tr>
+                </table>
+            </ion-item>
+            
+        </ion-list> -->
+
+       		<div class="list list-inset">
+			    <a class="item item-avatar-simobi item-icon-right item-text-wrap" menu-close ng-repeat="mainMenu in mainMenus | inArray:filterBy:'lvlMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+			      <!-- <img ng-src="css/img-app/{{mainMenu['icon']}}"> -->
+
+				  <img src="css/img-app/{{mainMenu['icon']}}">
+			      <div valign="center" style="vertical-align:top;padding-top:10px;padding-left:8px;" ><h2>{{mainMenu.code | translate}}</h2></div>
+			      <i class="icon ion-chevron-right icon-simobi-ionic-verysmall"></i>
+			    </a>
+			</div>
+	</div>
+
+	<div ng-if="themeMode == 'standar'" ng-repeat="mainMenu in mainMenus | inArray:filterBy:'lvlMenu'">
+	    <div class="row" ng-if="$even" style="margin: 0 0 0 -35px;">
+	        <div class="col col-50">
+	        	<div style="margin: -8px auto; width:100px">
+	        		<div ng-if="mainMenu.code != 'advertisement'">
+		        		<table style="margin: 0px auto;">
+		        			<tr>
+		        				<td ng-if="itIcon == true" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+		        					<!-- <img src="css/img-app/{{mainMenu.icon}}"> -->
+		        					<a class="button button-grandMenu-standar grandMenu-table">
+			        					<div class="main-menu-outside">
+			        						<img class="main-menu-inside" src="css/img-app/{{mainMenu.icon}}">
+			        					</div>
+		        					</a>
+		        				</td>
+
+		        				<td ng-if="darkIcon == true" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+		        					<img src="css/img-app-dark/{{mainMenu.icon}}">
+		        				</td>
+
+		        				<td ng-if="markomIcon == true" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+		        					<img src="css/img-app/{{mainMenu.icon}}">
+		        				</td>
+		        			</tr>
+		        			<tr>
+		        				<td align="center" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+		        					<p ng-if="themeMode == 'standar'" class="font-simobi-black">{{mainMenus[$index]['code'] | translate}}</p>
+		        					<p ng-if="themeMode == 'style1'" class="font-simobi-white">{{mainMenus[$index]['code'] | translate}}</p>
+		        				</td>
+		        			</tr>
+		        		</table>
+		        	</div>
+				</div>
+	        </div>
+	        <div class="col col-50">
+	        	<div style="margin: -8px auto; width:100px">
+	        		<div ng-if="mainMenus[$index + 1]['code'] != 'advertisement'">
+		        		<table style="margin: 0px auto;">
+		        			<tr ng-if="mainMenus[$index + 1]['icon']">
+		        				<td>
+		        					<table style="margin: 0px auto;">
+		        						<tr>
+		        							<td ng-if="itIcon == true" ng-click="clickGrandMenu(mainMenus[$index + 1]['code'],mainMenus[$index + 1]['nodeList'],mainMenus[$index + 1]['functionMenu'],'1',mainMenus[$index + 1]['id'])">
+		        								<!-- <img src="css/img-app/{{mainMenus[$index + 1]['icon']}}"> -->
+												<a class="button button-grandMenu-standar grandMenu-table">
+						        					<div class="main-menu-outside">
+						        						<img class="main-menu-inside" src="css/img-app/{{mainMenus[$index + 1]['icon']}}">
+						        					</div>
+					        					</a>
+		        							</td>
+
+		        							<td ng-if="darkIcon == true" ng-click="clickGrandMenu(mainMenus[$index + 1]['code'],mainMenus[$index + 1]['nodeList'],mainMenus[$index + 1]['functionMenu'],'1',mainMenus[$index + 1]['id'])">
+		        								<img src="css/img-app-dark/{{mainMenus[$index + 1]['icon']}}">
+		        							</td>
+		        						</tr>
+		        					</table>
+		        				</td>
+		        			</tr>
+		        			<tr ng-if="mainMenus[$index + 1]['icon']" >
+		        				<td>
+		        					<table style="margin: 0px auto;">
+		        						<tr>
+		        							<td ng-if="markomIcon == true" ng-click="clickGrandMenu(mainMenus[$index + 1]['code'],mainMenus[$index + 1]['nodeList'],mainMenus[$index + 1]['functionMenu'],'1',mainMenus[$index + 1]['id'])">
+		        								<!-- <img src="css/img-app/{{mainMenus[$index + 1]['icon']}}"> -->
+
+		        								<div class="main-menu-outside">
+					        						<img class="main-menu-inside" src="css/img-app/{{mainMenus[$index + 1]['icon']}}">
+					        					</div>
+		        							</td>
+		        						</tr>
+		        					</table>
+		        				</td>
+		        			</tr>
+		        			<tr>
+		        				<td align="center" ng-if="mainMenus[$index + 1]['name']" ng-click="clickGrandMenu(mainMenus[$index + 1]['code'],mainMenus[$index + 1]['nodeList'],mainMenus[$index + 1]['functionMenu'],'1',mainMenus[$index + 1]['id'])">
+		        					<p ng-if="themeMode == 'standar'" class="font-simobi-black">{{mainMenus[$index + 1]['code'] | translate}}</p>
+		        					<p ng-if="themeMode == 'style1'" class="font-simobi-white">{{mainMenus[$index + 1]['code'] | translate}}</p>
+		        				</td>
+		        			</tr>
+		        		</table>
+		        	</div>
+	        	</div>
+	        </div>
+	    </div>
+	    <div ng-if="mainMenu.code == 'advertisement'">
+	    	<div ng-if="showLogin == true">
+	    		<div style="overflow: auto; -webkit-overflow-scrolling:touch; width:100%; height: 100px;">
+		    		<iframe ng-src="{{trustedUrl}}" style="width:100%;" iframe-onload="iframeLoadedCallBack()"></iframe>
+		    	</div>
+		    </div>
+	    </div>
+	</div>
+	
+	<div ng-if="themeMode == 'colorGrid'" ng-repeat="mainMenu in mainMenus | inArray:filterBy:'lvlMenu'">
+	    <div class="row" ng-if="$even" style="margin: 0 0 0 -35px;">
+	        <div class="col col-50">
+	        	<div style="margin: -8px auto; width:100px">
+	        		<div ng-if="mainMenu.code != 'advertisement'">
+		        		<table style="margin: 0px auto;">
+		        			<tr>
+		        				<td ng-if="itIcon == true" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+		        					<!-- <img src="css/img-app/{{mainMenu.icon}}"> -->
+		        					<a class="button button-grandMenu-colorGrid grandMenu-table">
+			        					<div class="main-menu-colorGrid-left">
+			        						<img class="main-menu-inside" src="css/img-app-colorGrid/{{mainMenu.icon}}">
+			        					</div>
+			        				</a>
+		        				</td>
+
+		        				<td ng-if="darkIcon == true" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+		        					<img src="css/img-app-dark/{{mainMenu.icon}}">
+		        				</td>
+
+		        				<td ng-if="markomIcon == true" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+		        					<img src="css/img-app/{{mainMenu.icon}}">
+		        				</td>
+		        			</tr>
+		        			<tr>
+		        				<td align="center" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+		        					<p ng-if="themeMode == 'standar' || themeMode == 'colorGrid'" class="font-simobi-black-colorGrid-left">{{mainMenus[$index]['code'] | translate}}</p>
+		        					<p ng-if="themeMode == 'style1'" class="font-simobi-white">{{mainMenus[$index]['code'] | translate}}</p>
+		        				</td>
+		        			</tr>
+		        		</table>
+		        	</div>
+				</div>
+	        </div>
+	        <div class="col col-50">
+	        	<div style="margin: -8px auto; width:100px">
+	        		<div ng-if="mainMenus[$index + 1]['code'] != 'advertisement'">
+		        		<table style="margin: 0px auto;">
+		        			<tr ng-if="mainMenus[$index + 1]['icon']">
+		        				<td>
+		        					<table style="margin: 0px auto;">
+		        						<tr>
+		        							<td ng-if="itIcon == true" ng-click="clickGrandMenu(mainMenus[$index + 1]['code'],mainMenus[$index + 1]['nodeList'],mainMenus[$index + 1]['functionMenu'],'1',mainMenus[$index + 1]['id'])">
+		        								<!-- <img src="css/img-app/{{mainMenus[$index + 1]['icon']}}"> -->
+												<a class="button button-grandMenu-colorGrid grandMenu-table">
+						        					<div class="main-menu-colorGrid-right">
+						        						<img class="main-menu-inside" src="css/img-app-colorGrid/{{mainMenus[$index + 1]['icon']}}">
+						        					</div>
+					        					</a>
+		        							</td>
+
+		        							<td ng-if="darkIcon == true" ng-click="clickGrandMenu(mainMenus[$index + 1]['code'],mainMenus[$index + 1]['nodeList'],mainMenus[$index + 1]['functionMenu'],'1',mainMenus[$index + 1]['id'])">
+		        								<img src="css/img-app-dark/{{mainMenus[$index + 1]['icon']}}">
+		        							</td>
+		        						</tr>
+		        					</table>
+		        				</td>
+		        			</tr>
+		        			<tr ng-if="mainMenus[$index + 1]['icon']" >
+		        				<td>
+		        					<table style="margin: 0px auto;">
+		        						<tr>
+		        							<td ng-if="markomIcon == true" ng-click="clickGrandMenu(mainMenus[$index + 1]['code'],mainMenus[$index + 1]['nodeList'],mainMenus[$index + 1]['functionMenu'],'1',mainMenus[$index + 1]['id'])">
+		        								<!-- <img src="css/img-app/{{mainMenus[$index + 1]['icon']}}"> -->
+
+		        								<div class="main-menu-outside">
+					        						<img class="main-menu-inside" src="css/img-app/{{mainMenus[$index + 1]['icon']}}">
+					        					</div>
+		        							</td>
+		        						</tr>
+		        					</table>
+		        				</td>
+		        			</tr>
+		        			<tr>
+		        				<td align="center" ng-if="mainMenus[$index + 1]['name']" ng-click="clickGrandMenu(mainMenus[$index + 1]['code'],mainMenus[$index + 1]['nodeList'],mainMenus[$index + 1]['functionMenu'],'1',mainMenus[$index + 1]['id'])">
+		        					<p ng-if="themeMode == 'standar' || themeMode == 'colorGrid'" class="font-simobi-black-colorGrid-right">{{mainMenus[$index + 1]['code'] | translate}}</p>
+		        					<p ng-if="themeMode == 'style1'" class="font-simobi-white">{{mainMenus[$index + 1]['code'] | translate}}</p>
+		        				</td>
+		        			</tr>
+		        		</table>
+		        	</div>
+	        	</div>
+	        </div>
+	    </div>
+	    <div ng-if="mainMenu.code == 'advertisement'">
+	    	<div ng-if="showLogin == true">
+	    		<div style="overflow: auto; -webkit-overflow-scrolling:touch; width:100%; height: 100px;">
+		    		<iframe ng-src="{{trustedUrl}}" style="width:100%;" iframe-onload="iframeLoadedCallBack()"></iframe>
+		    	</div>
+		    </div>
+	    </div>
+	</div>
+
+	<!-- <ion-scroll direction="x" class="wide-as-needed">
+		<a class="button button-outline button-stable" ng-repeat="mainMenu in mainMenus | inArray:filterBy:'extraMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+	       <! - - {{mainMenu.name}} - - >
+
+	        <table>
+              <tr>
+                <td style="vertical-align:top;padding-top:15px;">
+	        		<img ng-if="itIcon == true" width="60px" height="60px" src="css/img-app/{{mainMenu.icon}}">
+	        		<img ng-if="markomIcon == true" width="60px" height="60px" src="css/img-app-markom/{{mainMenu.icon}}">
+                </td> 
+              </tr>
+            </table>
+	    </a>
+    </ion-scroll> -->
+
+    <!--div ng-if="showLogin == true">
+    	<iframe ng-src="https://www.banksinarmas.com" style="width:100%; height: 100px;" iframe-onload="iframeLoadedCallBack()"></iframe>
+    </div-->
+
+    <div class="footer-space"/>
+  </ion-content>
+  
+	
+</ion-view>

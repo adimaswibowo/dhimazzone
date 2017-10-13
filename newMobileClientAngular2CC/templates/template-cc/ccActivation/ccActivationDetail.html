@@ -1,0 +1,51 @@
+<ion-view cache-view="false" view-title="{{'ccActivationDetail'|translate}}">
+  <ion-content class="simobi-background-content">
+  
+	<div id="ccDetailDisplayId" class="list list-inset">
+		<table width="100%">
+			<tr>
+				<td id="ccDetailDisplay">
+				</td>
+			</tr>
+		</table>
+	</div>	
+	
+	<div class="list list-inset" id="transferInput">
+		<label class="item">
+			{{'ccActivationSubmitMessage'|translate}}
+		</label>
+	</div>
+	
+<!-- 	<div class="list list-inset" id="transferInput"> -->
+<!-- 		<label class="item item-input"> -->
+<!-- 			<input type="tel" name="ccLimitText" id="ccLimitText" size="17" style="font-size:20px;font-weight:bold;" onkeyup="addCommas2(this.value);" maxlength="15" placeholder="Input New Limit Amount" ng-model="ccLimitText"/> -->
+<!-- 		</label> -->
+<!-- 	</div> -->
+	
+<!-- 	<button class="button button-block button-positive" ng-click="doBack();"> -->
+<!-- 	  	Back -->
+<!-- 	</button> -->
+	
+<!-- 	<button class="button button-block button-positive" ng-click="doChangeLimit();"> -->
+<!-- 	  	Change Limit -->
+<!-- 	</button> -->
+
+	<!-- <button class="button button-block button-positive" ng-click="doActivationRequest();"> -->
+	<button class="button button-block button-positive" ng-click="checkSecurityTypeAssigner();">
+	  	Submit
+	</button>
+	
+	<div>
+		<table border="0" >
+	        <tr>
+				<td>
+					<input ng-model='ccNumber' type='text' name='ccNumberHidden' id='ccNumberHidden' style="visibility: hidden;"/>
+<!-- 					<input ng-model='ccNumber' type='text' name='ccNumberHidden' id='ccNumberHidden' /> -->
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="footer-space"/>
+  </ion-content>
+</ion-view>

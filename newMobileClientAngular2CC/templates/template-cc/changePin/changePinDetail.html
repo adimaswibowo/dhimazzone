@@ -1,0 +1,78 @@
+<ion-view cache-view="false" view-title="Change PIN Detail">
+  <ion-content class="simobi-background-content">
+  
+	<div id="ccDetailDisplayId" class="list list-inset">
+		<table width="100%">
+			<tr>
+				<td id="ccDetailDisplay">
+				</td>
+			</tr>
+		</table>
+	</div>	
+	
+	<div class="list list-inset" id="transferInput">
+		<label class="item">
+			Please input new PIN and click Submit to Change PIN
+		</label>
+	</div>
+	
+	<div class="list list-inset">
+        <label class="item item-input">
+         <input type="password" ng-model="passwordData.oldPin" placeholder="{{'enter_old_pin'|translate}}">
+        </label>
+        <label class="item item-input">
+         <input type="password" ng-model="passwordData.newPin" placeholder="{{'enter_new_pin'|translate}}">
+        </label>
+        <label class="item item-input">
+         <input type="password" ng-model="passwordData.newPinConfirm" placeholder="{{'enter_confirm_new_pin'|translate}}">
+        </label>
+    </div>
+	
+	<button class="button button-block button-positive" ng-click="doChangePinResult();">
+	  	Submit
+	</button>
+	
+	  <br>
+
+	  <table>
+	   		<tr>
+	   			<td>
+	   			</td>
+	   			<td>
+	   				<p class="m_footer-noteheader">{{ 'msg_note' | translate }}</p>
+	   			</td>
+	   		</tr>
+	   		<tr>
+	   			<td>
+	   				<p class="m_footer-noteheader">{{ 'number_1' | translate }}</p>
+	   			</td>
+	   			<td>
+	   				<p class="m_footer-notefield">{{ 'note_cc_block_1' | translate }} </p>
+	   			</td>
+	   		</tr>
+	  </table>
+	  
+	<div class="card">
+	  	<a class="item item-icon-left" href="tel:+622150188888">
+		    <i class="icon ion-android-call"></i>
+		    	{{'note_cc_directCallCS'|translate}}
+		    <span class="item-note">
+		    	(021)501 88888
+		    </span>
+	    </a>
+	</div>
+	  
+	<div>
+		<table border="0" >
+	        <tr>
+				<td>
+					<input ng-model='ccNumber' type='text' name='ccNumberHidden' id='ccNumberHidden' style="visibility: hidden;"/>
+<!-- 					<input ng-model='ccNumber' type='text' name='ccNumberHidden' id='ccNumberHidden' /> -->
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="footer-space"/>
+  </ion-content>
+</ion-view>

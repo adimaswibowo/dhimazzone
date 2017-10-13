@@ -1,0 +1,22 @@
+<ion-view view-title="{{'bankBranchLocation'|translate}}">
+	<ion-content class="simobi-background-content">
+		<form>
+				<div ng-controller="showProvinceBranchCtrl">
+					<ion-item class="button-assertive">
+								<div><b>{{'province_list'|translate}} :</b></div>
+					</ion-item>
+					<ion-item class="button-assertive" ng-repeat="showBranchLocatorMenuModel in showBranchLocatorMenu | unique: 'nameOption'" ng-click="dinamicMenu({{showBranchLocatorMenuModel}});">
+						 {{showBranchLocatorMenuModel.nameOption}}
+					</ion-item>
+					
+					<!--<span ng:repeat="(index, value) in defaultMenuJson | inArray:filterBy:'lvlMenu'" ng-click="dinamicMenu({{defaultMenuJsonModel}});">
+						<img src="theme-default/images/{{value.icon}}" /> {{value.name}}<br ng:show="(index+1)%2==0" />
+					</span>-->
+				</div>
+		</form>
+		<div class="footer-space"/>
+	</ion-content>
+</ion-view>
+
+
+

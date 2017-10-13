@@ -1,0 +1,180 @@
+<ion-view cache-view="false" view-title="{{'ftExternalBankInput'|translate}}">
+	<ion-content class="simobi-background-content">
+		<!--   	<div ng-controller="ftExternalBankInputCtrl"> -->
+		<div class="list list-inset">
+		  <label class="item item-input">
+		  	<i class="icon ion-search placeholder-icon"></i>
+		    <div ft-external-bank-input-directive type="accountNumberExt"></div>
+		  </label>
+
+<!--  Febry: FT Recurring & Future Date  -->
+<!-- 		  <label class="item item-radio"> -->
+<!-- 	    <input type="radio" name="transactionDate" value="1" id="transactionDate" ng-model="entry.transactionDate"> -->
+<!-- 	    <div class="item-content"> -->
+<!-- 	    {{'ftImmediate_transfer'|translate}} -->
+<!-- 	    </div> -->
+<!-- 	    <i class="radio-icon ion-checkmark"></i> -->
+<!-- 	  </label> -->
+<!-- 	  <label class="item item-radio"> -->
+<!-- 	    <input type="radio" name="transactionDate" value="0" id="transactionDate"  ng-model="entry.transactionDate"> -->
+<!-- 	    <div class="item-content"> -->
+<!-- 	    {{'ftFutureDated_transfer'|translate}} -->
+<!-- 	    </div> -->
+<!-- 	    <i class="radio-icon ion-checkmark"></i> -->
+<!-- 	  </label> -->
+<!-- 	  <div class="row" style="background:#E6E0E0" ng-show="entry.transactionDate=='0'"> -->
+<!-- 		  		<div class="col"> -->
+<!-- 		       		<label>	{{'ftTransfer_date' |translate}} : </label> -->
+<!-- 	  			</div> -->
+<!-- 	  			<div class="col col-50">	 -->
+<!-- 	  				 <label class="item item-input-simobi"> -->
+<!-- 				      	<input type="date" name="transDate" id="transDate" placeholder="{{'ftTransfer_date' |translate}}"  /> -->
+<!-- 				     </label> -->
+<!-- 	  			</div> -->
+<!-- 	  </div> -->
+<!-- 	  <label class="item item-radio"> -->
+<!-- 	    <input type="radio" name="transactionDate" value="2" id="transactionDate"  ng-model="entry.transactionDate"> -->
+<!-- 	    <div class="item-content"> -->
+<!-- 	    {{'ftRecuring'|translate}} -->
+<!-- 	    </div> -->
+<!-- 	    <i class="radio-icon ion-checkmark"></i> -->
+<!-- 	  </label> -->
+<!-- 	  <div ng-show="entry.transactionDate=='2'"  style="background:#E6E0E0"> -->
+<!-- 	  		<div class="row"> -->
+<!-- 		  		<div class="col"> -->
+<!-- 		  			<label><input type="radio" name="recFreq" id="recFreq" value="0"  > {{'ftRecuringMonthly'|translate}}</input></label> -->
+<!-- 		  		</div> -->
+<!-- 		  		<div class="col col-50">	 -->
+<!-- 		  			<label class="item item-input"><input type='text'  name='recurringText' id='recurringText' ng-click="dropdownBlockPage('recuringDay');" placeholder="{{'ftRecurringText' |translate}}" size="10" ng-model="recurringText"/></label> -->
+<!-- 		  		</div> -->
+<!-- 		  	</div> -->
+<!-- 		  	<div class="row"> -->
+<!-- 		  		<div class="col"> -->
+<!-- 		  			<label><input type="radio" name="recFreq" id="recFreq" value="1" > {{'ftRecuringPeriod'|translate}}</input> </label> -->
+<!-- 		  		</div> -->
+<!-- 		  		<div class="col col-50">	 -->
+<!-- 		  			<label class="item item-input"><input type='text'  name='recurringInterval' id='recurringInterval' placeholder="{{'ftRecurringDay' |translate}}" size="6" maxlength="3"/></label> -->
+<!-- 		  		</div> -->
+<!-- 		  	</div> -->
+<!-- 		  	<div class="row"> -->
+<!-- 		  		<div class="col"> -->
+<!-- 		  			{{'ftRecuringEndCond'|translate}} -->
+<!-- 		  		</div> -->
+<!-- 		  	</div> -->
+<!-- 		  	<div class="row"> -->
+<!-- 		  		<div class="col"> -->
+<!-- 		  			<label><input type="checkbox" name="isMaxRecurrenceDateChecked" id="isMaxRecurrenceDateChecked" > {{'ftRecuringExpired'|translate}}</input></label> -->
+<!-- 		  		</div> -->
+<!-- 		  		<div class="col col-50">	 -->
+<!-- 		  			<label class="item item-input-simobi"><input type="date"  name="maxRecurrenceDate" id="maxRecurrenceDate" placeholder="{{'ftRecuringExpired_date'|translate}}"  /></label> -->
+<!-- 		  		</div> -->
+<!-- 		  	</div> -->
+<!-- 		  	<div class="row"> -->
+<!-- 		  		<div class="col"> -->
+<!-- 		  			<label><input type="checkbox" name="isMaxRecurrenceChecked" id="isMaxRecurrenceChecked"  > {{'ftMaxRecurrenceChecked'|translate}}</input></label> -->
+<!-- 		  		</div> -->
+<!-- 		  		<div class="col col-50">	 -->
+<!-- 		  			<label class="item item-input"><input type='text' name='maxRecurrence' id='maxRecurrence' placeholder="{{'ftMaxRecurrenceTimes'|translate}}" size="6" maxlength="2"/></label> -->
+<!-- 		  		</div> -->
+<!-- 		  	</div> -->
+<!-- 	  </div> -->
+		  
+		  
+		  <label class="item item-input">
+		  	<i class="icon ion-search placeholder-icon"></i>
+		    <div ft-external-bank-input-directive type="targetAccountExt"></div>
+		  </label>
+		  <button class="button button-small button-assertive" ng-click="doAddExternalBankTransferList();">
+	<!-- 	  	<input type="button" name="buttonAddExternalTargetAccount" id="buttonAddExternalTargetAccount" value="Add New" ng-click="doAddExternalBankTransferList();" /> -->
+		  	{{'add_new_target_account' |translate}}
+		  </button>
+		   
+<!--  Febry: FT Recurring & Future Date  -->   
+<!-- 		   <div class="row"> -->
+<!-- 		  		<div class="col"> -->
+<!-- 				  	 <label> -->
+<!-- 					    <input type="radio" name="mode" value="skn" id="sknRb">SKN -->
+<!-- 					 </label> -->
+<!-- 				 </div> -->
+<!-- 				  <div class="col col-33"> -->
+<!-- 					  <label> -->
+<!-- 					    <input type="radio" name="mode" value="rtgs" id="rtgsRb">RTGS -->
+<!-- 					  </label> -->
+<!-- 				   </div> -->
+<!-- 				   <div class="col col-33 col-33"> -->
+<!-- 				   	  <label> -->
+<!-- 					    <input type="radio" name="mode" value="network" id="networkRb">Network -->
+<!-- 					  </label> -->
+<!-- 				  </div> -->
+<!-- 		  </div> -->
+
+			
+		  <label class="item item-radio">
+		    <input type="radio" name="mode" value="skn" id="sknRb">
+		    <div class="item-content">
+		      SKN
+		    </div>
+		    <i class="radio-icon ion-checkmark"></i>
+		  </label>
+		  <label class="item item-radio">
+		    <input type="radio" name="mode" value="rtgs" id="rtgsRb">
+		    <div class="item-content">
+		      RTGS
+		    </div>
+		    <i class="radio-icon ion-checkmark"></i>
+		  </label>
+		  <label class="item item-radio">
+		    <input type="radio" name="mode" value="network" id="networkRb">
+		    <div class="item-content">
+		      Network
+		    </div>
+		    <i class="radio-icon ion-checkmark"></i>
+		  </label>	
+		  
+		  
+		  <div class="row">
+		  	<div class="col">
+		  		<label class="item item-input item-select" style="height: 45px;">
+			    	<!-- <select name="currency" id="currency">
+			    		<option>IDR</option>
+		        	</select>  -->
+		        	<input type="text" name="currency" id="currency" ng-click="dropdownBlockPageCurrency();" placeholder="{{'select_currency' |translate}}" size="45" value="IDR"/>
+		        	
+			    </label>
+		  	</div>
+		  	<div class="col col-67">
+		  		 <label class="item item-input" >
+				    <div ft-external-bank-input-directive type="amount"></div>
+				 </label>
+		  	</div>
+		  </div>
+		  <label class="item item-input">
+		    <div ft-external-bank-input-directive type="description"></div>
+		  </label>
+		   <label class="td-label-left">
+	       		<p class="m_content-caption">{{'note_discription' |translate}}</p>
+	  	   </label>
+		  <button class="button button-block button-positive" ng-click="checkSecurityTypeAssigner();" >
+		  	Confirm
+		  </button>
+		</div>
+		
+		<div>
+			<table border="0" >
+		        <tr>
+					<td>
+						<input ng-model='accountNumber' type='text' name='accountNumberHidden' id='accountNumberHidden' style="visibility: hidden;"/>
+						<input ng-model='targetAccount' type='text' name='targetAccountHidden' id='targetAccountHidden' style="visibility: hidden;"/>
+						<input ng-model='targetAccount' type='text' name='recurringHidden' id='recurringHidden' style="visibility: hidden;"/>
+						<input type="button" style="display:none;" name="button" id="button" value="Confirm" ng-click="doFtExternalBankConfirm();" />
+					</td>
+				</tr>
+				<tr>
+		            <td id ="dinamicValue">
+		            </td>
+		        </tr>
+			</table>
+		</div>
+		<div class="footer-space"/>
+	</ion-content>
+</ion-view>

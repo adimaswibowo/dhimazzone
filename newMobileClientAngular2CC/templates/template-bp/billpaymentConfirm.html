@@ -1,0 +1,42 @@
+<ion-view cache-view="false" view-title="Billpayment Confirmation">
+<ion-content class="simobi-background-content">
+<div class="list list-inset" align="center">
+<input type="text" id="transRefNum" style="visibility: hidden;" name="transRefNum" ng-model="transRefNum"/>
+<button class="button icon-left ion-chevron-left button-clear button-dark" ng-click="backToBillpay();">{{ 'button_back' | translate }}</button>
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="button icon-left ion-home" ng-click="backToIndex();">Home</button>-->
+<table width="100%"> 
+   <tr>
+        <td class="td-label-left" colspan="2" id="confirmList"> 
+		</td>
+   </tr> 
+   <tr height="30">
+   </tr>
+   <tr>
+		<td class="td-label-left" colspan="2"> 
+			<table width="100%">
+				<div id="securityTypeTokenInput" class="securityType-TokenInput"></div>
+				<div id="id1"></div>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="td-login-form" colspan="2">
+			<br>
+			<input type="button" name="button" class="button button-block button-positive" id="button" value="Submit" ng-click="doSubmitConfirmBillpay();" />
+		</td>
+	</tr>
+	<tr>
+		<td class="td-label-left" colspan="2">
+		<br>
+		<hr>
+			<p class="m_content-note">{{ 'msg_note' | translate }} </p> 
+			<p class="m_content-note">{{ 'purchasePayment_noteConfirm' | translate }} </p> 
+		</td>
+	</tr>
+</table>
+ </div>
+ <div class="footer-space"/>
+</ion-content>
+</ion-view>
+ 

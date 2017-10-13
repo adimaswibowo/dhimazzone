@@ -1,0 +1,22 @@
+    <div id="angularAccountList" ng-controller="inquiryBalanceCtrl" >
+		<select ng-model="accountModel.selected">
+	      	<option value = "0" label = "Please Select"></option>
+	      	<option ng-repeat="account in accList" value="{{account.id}}">
+	           {{account.label}}
+	      	</option>
+	   	</select>
+
+<!-- 	   <ui-select style="width: 300px;" title="Choose an Account"> -->
+<!-- 	    	<ui-select-match placeholder="Select or search a Account in the list...">{{$select.selected.label}}</ui-select-match> -->
+<!-- 	   		<ui-select-choices repeat="account in accList | propsFilter: {label: $select.search}"> -->
+<!-- 	        	<span ng-bind-html="account.label | highlight: $select.search"></span> -->
+<!-- 	    	</ui-select-choices> -->
+<!-- 	   </ui-select> -->
+
+<!-- 			Search: <input ng-model="query"> -->
+<!-- 			<ul class="accList" style="overflow-y:auto;"> -->
+<!-- 	          <li ng-repeat="account in accList | filter:query" class="thumbnail"> -->
+<!-- 	            <p>{{account.label}}</p> -->
+<!-- 	          </li> -->
+<!-- 	        </ul> -->
+	</div>

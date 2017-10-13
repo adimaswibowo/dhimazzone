@@ -1,0 +1,265 @@
+<ion-view cache-view="false" view-title="Card Limit Detail">
+  <ion-content class="simobi-background-content">
+  
+<!--   	<div class="list list-inset">
+		<table width="100%">
+	      <tr>
+	        <td style="vertical-align:top;padding-top:45px;">
+	          <div>
+			    <ion-item class="item-text-wrap" ng-model="cardLimitSelect" ng-repeat="cardLimitSelect in limitCard.cardLimit" ng-click="changeLimitDong({{cardLimitSelect}});" id="{{cardLimitSelect.limitId}}">
+			       Credit Limit : {{cardLimitSelect.limitValue}}
+			    </ion-item>
+			  </div>
+	        </td>
+	      </tr>
+	      <tr>
+		    <td class='txtTitleAccDetSmall' width='45%' align='left'>Card No </td>
+		    <td> : </td>
+		    <td class='txtTitleAccDet' width='45%' align='left'>{{limitCard.dataCardNo}}</td>
+		  </tr>
+		  <tr>
+		    <td class='txtTitleAccDetSmall' width='45%' align='left'>Limit Id </td>
+		    <td> : </td>
+		    <td class='txtTitleAccDet' width='45%' align='left'>{{limitCard.dataLimitId}}</td>
+		  </tr>
+		  <tr>
+		    <td class='txtTitleAccDetSmall' width='45%' align='left'>Limit Type </td>
+		    <td> : </td>
+		    <td class='txtTitleAccDet' width='45%' align='left'>{{limitCard.dataLimitType}}</td>
+		  </tr>
+		  <tr>
+		    <td class='txtTitleAccDetSmall' width='45%' align='left'>Limit Type Desc </td>
+		    <td> : </td>
+		    <td class='txtTitleAccDet' width='45%' align='left'>{{limitCard.dataLimitTypeDesc}}</td>
+		  </tr>
+		  <tr>
+		    <td class='txtTitleAccDetSmall' width='45%' align='left'>Current Value </td>
+		    <td> : </td>
+		    <td class='txtTitleAccDet' width='45%' align='left'>{{limitCard.dataCurrentValue}}</td>
+		  </tr>
+		  <tr>
+		    <td class='txtTitleAccDetSmall' width='45%' align='left'>Limit Value </td>
+		    <td> : </td>
+		    <td class='txtTitleAccDet' width='45%' align='left'>{{limitCard.dataLimitValue}}</td>
+		  </tr>
+		  <tr>
+		    <td class='txtTitleAccDetSmall' width='45%' align='left'>Limit Curr </td>
+		    <td> : </td>
+		    <td class='txtTitleAccDet' width='45%' align='left'>{{limitCard.dataLimitCurr}}</td>
+		  </tr>
+		  <tr>
+		    <td class='txtTitleAccDetSmall' width='45%' align='left'>Description </td>
+		    <td> : </td>
+		    <td class='txtTitleAccDet' width='45%' align='left'>{{limitCard.dataDescription}}</td>
+		  </tr>
+		  <tr>
+		    <td class='txtTitleAccDetSmall' width='45%' align='left'>Cycle Length </td>
+		    <td> : </td>
+		    <td class='txtTitleAccDet' width='45%' align='left'>{{limitCard.dataCycleLength}}</td>
+		  </tr>
+		  <tr>
+		    <td class='txtTitleAccDetSmall' width='45%' align='left'>Cycle Type </td>
+		    <td> : </td>
+		    <td class='txtTitleAccDet' width='45%' align='left'>{{limitCard.dataCycleType}}</td>
+		  </tr>
+		  <tr>
+		    <td class='txtTitleAccDetSmall' width='45%' align='left'>Cycle Type Desc </td>
+		    <td> : </td>
+		    <td class='txtTitleAccDet' width='45%' align='left'>{{limitCard.dataCycleTypeDesc}}</td>
+		  </tr>
+	     
+	    </table>
+	</div> -->
+  
+  
+	<div id="ccDetailDisplayId" class="list list-inset">
+		<table width="100%">
+			<tr>
+				<td id="ccDetailDisplay">
+				</td>
+			</tr>
+		</table>
+	</div>	
+	
+<!-- 	<div class="list list-inset" id="transferInput"> -->
+<!-- 		<label class="item item-input"> -->
+<!-- 			<input type="tel" name="ccLimitText" id="ccLimitText" size="17" style="font-size:20px;font-weight:bold;" onkeyup="addCommas2(this.value);" maxlength="15" placeholder="Input New Limit Amount" ng-model="ccLimitText"/> -->
+<!-- 		</label> -->
+<!-- 	</div> -->
+
+	<div class="list list-inset">
+		<div>
+			<!-- <label class="item">
+				Credit Limit Mode 1 : {{userLimitReal1}}
+				<input type="button" class="btn-submit-desktop" name="button" id="button" ng-click="changeMode('1')" value='Submit'/>
+			</label>
+			<label class="item">
+				Credit Limit Mode 2 : {{userLimitReal2}}
+				<input type="button" class="btn-submit-desktop" name="button" id="button" ng-click="changeMode('2')" value='Submit'/>
+			</label>
+			<label class="item">
+				Credit Limit Mode 3 : {{userLimitReal3}}
+				<input type="button" class="btn-submit-desktop" name="button" id="button" ng-click="changeMode('3')" value='Submit'/>
+			</label> -->
+				
+			<table width="100%">
+			  <hr class="lineHR_Sign">
+		      <tr>		      
+		      	<td>		      	
+		        <!-- <td style="vertical-align:top;padding-top:45px;"> -->
+		          <div>
+		          		<!-- <div class="row">
+		          		  <div class="col" align="center">
+						  	{{'description' | translate}}
+						  </div>
+						  <div class="col" align="center">
+						  	{{'existingLimit' | translate}}
+						  </div>
+						  <div class="col" align="center">
+						  	{{'newLimit' | translate}}
+						  </div>
+						  <div class="col" align="center">
+						  	{{'currency' | translate}}
+						  </div>
+						  <div class="col" align="center">
+						  
+						  </div>
+					    </div> -->
+					    <hr class="lineHR_Sign">					    
+				    <ion-item class="item-text-wrap" ng-model="cardLimitSelect" ng-repeat="cardLimitSelect in limitCard.cardLimit" id="{{cardLimitSelect.limitId}}">	    
+					 	<div class="row">
+					 	  <div class="col bgrLineGrey" align="left">
+						  	{{cardLimitSelect.description}}
+						  </div>
+						</div>
+						<div class="row">
+							<div class="col txtNameAccSumDet" align="left">
+						  		{{'existingLimit' | translate}}
+						  	</div>
+						  	<div class="col txtNameAccSumValue" align="right">
+						  		{{cardLimitSelect.limitValue}}
+						  	</div>
+						</div>
+						<div class="row">
+							<div class="col txtNameAccSumDet" align="left">
+						  		{{'newLimit' | translate}}
+						  	</div>
+						  	<div class="col txtNameAccSumValue" align="right">
+						  		{{cardLimitSelect.limitValueNew}}
+						  	</div>
+
+						  	<!-- <div class="col" align="center">
+						  		{{cardLimitSelect.limitCurr}}
+						 	</div> -->
+						   <!-- 	<div class="col" align="center">
+							<button class="btn-submit-desktop" ng-click="showChangeLimit({{cardLimitSelect}});" >
+								{{'change' | translate}}
+							</button>
+						  </div> -->
+					    </div>
+					    <div class="row">
+					    	<div class="col txtNameAccSumDet" align="left">
+						  		 Currency
+						  	</div>
+						  	<div class="col txtNameAccSumValue" align="right">
+						  		{{cardLimitSelect.limitCurr}}
+						  	</div>
+						</div>
+					    <div class="row">
+					    	<div class="col" align="center">
+							<button class="button button-block button-small button-positive" style="font-size: medium;" ng-click="showChangeLimit({{cardLimitSelect}})">
+								{{'change' | translate}}
+							</button>
+						  </div>
+					    </div>
+					</ion-item>    
+				  </div>
+			    </td>
+			  </tr>
+			</table>
+			<table width="100%">
+			  <hr class="lineHR_Sign">
+			  <tr>
+			  <hr class="btmLineGrouping">
+		      	<td>
+		      	<hr class="btmLineBold">	
+					<!-- &nbsp; -->
+				</td>
+			  </tr>
+		      <tr>
+		      	<td>	
+					<div id="changeLimitRange"></div>
+				</td>
+			  </tr>
+			</table>
+		</div>	
+		<!-- <div ng-if="manuallyInput == 'true'">
+			<div ng-if="tempData.mode == '1'">
+			<label class="item item-input">
+	 			<input type="tel" name="amount1" id="amount1" size="17" style="font-size:20px;font-weight:bold;" onkeyup="addCommas2Generic(this.value);" maxlength="15" placeholder="Input New Limit Amount Mode 1" />
+	 		</label>
+	 		</div>
+	 		<div ng-if="tempData.mode == '2'">
+			<label class="item item-input">
+	 			<input type="tel" name="amount2" id="amount2" size="17" style="font-size:20px;font-weight:bold;" onkeyup="addCommas2Generic(this.value);" maxlength="15" placeholder="Input New Limit Amount Mode 2" />
+	 		</label>
+	 		</div>
+	 		<div ng-if="tempData.mode == '3'">
+			<label class="item item-input">
+	 			<input type="tel" name="amount3" id="amount3" size="17" style="font-size:20px;font-weight:bold;" onkeyup="addCommas2Generic(this.value);" maxlength="15" placeholder="Input New Limit Amount Mode 3" />
+	 		</label>
+	 		</div>
+		</div> -->
+	</div>
+	
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+ 		<tr>
+          <td colspan="2" id ="loadDataSecurityType"> 
+            <div ng-show="cardLimit.visibleChangeLimitAppST == 'true'"> 
+             <br><hr class="btmLine">
+             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+               <tr align="right">
+                 <td align="right">			              
+                      <input type="button" nodeST="buttonCheckST" class="button button-block button-positive" name="buttonConfirmST" id="buttonConfirmST" value="{{'button_submit' | translate}}" ng-click="checkSecurityTypeAssigner();" /> 
+                      <!-- <input type="button" nodeST="buttonCheckST" value="{{'button_cancel' | translate}}" class="btn-back-desktop" id="cancelAutoDebetThreshold" ng-click="backAutoDebetThreshold();" /> -->
+             	  </td>
+             	</tr>
+             </table>			             
+            </div>
+            <div id="securityTypeConfirmation" class="securityTypeConfirmation"></div>   
+            <div ng-show="cardLimit.visibleChangeLimitAppButton == 'true'"> 
+             <br><hr class="btmLine">
+             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+             	<tr align="right">
+             	  <td align="right">
+    				<input type="button" class="btn-submit-desktop" nodeST="buttonConfirm" name="submitCardLimit" id="submitCardLimit" value="{{'button_submit' | translate}}" ng-click="doChangeLimit();"  /> 
+         			<input type="button" class="btn-back-desktop" nodeST="buttonCancel"  name="buttonCancelST" id="buttonCancelST" value="{{'button_cancel' | translate}}" ng-click="cancelCheckSecurityChangeLimit();"/> 
+	  		  	  </td>
+        		</tr>
+        	 </table>
+            </div>           
+          </td>          
+        </tr>
+    </table>
+	
+	
+	
+	
+	
+	<!-- <button class="button button-block button-positive" ng-click="doChangeLimit();">
+	  	Submit
+	</button> -->
+	
+	<div>
+		<table border="0" >
+	        <tr>
+				<td>
+					<input ng-model='ccNumber' type='text' name='ccNumberHidden' id='ccNumberHidden' style="visibility: hidden;"/>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="footer-space-limit"/>
+  </ion-content>
+</ion-view>

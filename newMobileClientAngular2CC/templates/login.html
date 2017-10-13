@@ -1,0 +1,20 @@
+<ion-view view-title="Login">
+  <ion-content class="simobi-background-content">
+    <form ng-submit="doLogin()">
+      <div class="list list-inset">
+          <label class="item item-input">
+	         <input type="text" ng-if="isDevice == false" ng-model="loginData.username" placeholder="Enter Your Username">
+	         <input type="tel" ng-if="isDevice == true" ng-model="loginData.username" placeholder="Enter Your Mobile Number">
+          </label>
+          <label class="item item-input">
+	         <input type="password" ng-if="showPassword == false" ng-model="loginData.password" placeholder="Enter Your Password">
+	         <input type="text" ng-if="showPassword == true" ng-model="loginData.password" placeholder="Enter Your Password">
+           	 <i id="showPassword" ng-class="{'text-wrap button button-icon button-clear ion-eye icon-simobi-ionic': !showPassword, 'text-wrap button button-icon button-clear ion-eye-disabled icon-simobi-ionic': showPassword}" on-tap="showPassword = !showPassword" ></i>
+          </label> 
+      </div>
+	  <div class="list list-inset">
+        <button class="button button-block button-positive" type="submit">Log in</button>
+	  </div>
+    </form>
+  </ion-content>
+</ion-view>

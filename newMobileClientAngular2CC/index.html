@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'"> -->
+	  <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'  127.0.0.1:*  http://*.gstatic.com  http://*.googleapis.com https://*.gstatic.com  https://*.googleapis.com ; script-src 'self' 'unsafe-inline' 'unsafe-eval'  127.0.0.1:*  http://*.gstatic.com  http://*.googleapis.com https://*.gstatic.com  https://*.googleapis.com ">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet" id="themeIonic_css">
+    <link href="css/style.css" rel="stylesheet">
+	  <!--<link type="text/css" rel="stylesheet" href="lib/ionic/css/angular-ui/angular-block-ui.min.css" /> -->
+	  <link type="text/css" rel="stylesheet" href="css/css-app/style_a_S.css" />
+    <!-- <link type="text/css" rel="stylesheet" href="css/css-popup/arc-popup.css" /> -->
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+    <script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.js"></script>
+    <script src="lib/ionic-service-core/ionic-core.js"></script>
+    
+    <link href="lib/dhtmlxcalendar/dhtmlxcalendar.css" rel="stylesheet">
+    <script src="lib/dhtmlxcalendar/dhtmlxcalendar.js"></script>
+    
+    <script type="text/javascript" src="lib/ionic/js/angular/angular-touch.js"></script>
+  	<script type="text/javascript" src="lib/ionic/js/angular/angular-route.min.js"></script>
+  	<script type="text/javascript" src="lib/ionic/js/angular/angular-resource.min.js"></script>
+  	<script type="text/javascript" src="lib/ionic/js/angular/angular-translate.min.js"></script>
+  	<script type="text/javascript" src="lib/ionic/js/angular/angular-sanitize.js"></script>
+  	<!-- <script type="text/javascript" src="lib/ionic/js/angular-ui/angular-block-ui.min.js"></script>	-->
+  	
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    
+    <!-- HSM js -->
+  	<script type='text/javascript' src="js/js-hsm/base64_jso.js"></script>
+  	<script type='text/javascript' src="js/js-hsm/hashprc_jso.js"></script>
+  	<script type='text/javascript' src="js/js-hsm/jsbn_jso.js"></script>
+  	<script type='text/javascript' src="js/js-hsm/prng4_jso.js"></script>
+  	<script type='text/javascript' src="js/js-hsm/rng_jso.js"></script>
+  	<script type='text/javascript' src="js/js-hsm/rsa_jso.js"></script>
+
+    <!-- simobiPlus js -->
+    <script src="js/js-lib/message.en.js"></script>
+    <script src="js/js-lib/message.id.js"></script>
+    <script src="js/js-lib/var.js"></script>
+    <script src="js/js-lib/session.code.generator.js"></script>
+    <script src="js/js-lib/grandMenu.js"></script>
+    <script src="js/js-lib/hsm.init.js"></script>
+    <script src="js/js-lib/login.js"></script>
+    <script src="js/js-lib/logout.js"></script>
+    <script src="js/js-lib/common.js"></script>
+    <script src="js/js-lib/autologout.js"></script>
+    
+    <!-- Map Locator -->
+	  <script src="js/js-lib/js-al/lodash.min.js"></script>
+    <script src="js/js-lib/js-al/bluebird.js"></script>
+    <script src="js/js-lib/js-al/angular-google-maps.min.js"></script>
+    <script src="js/js-lib/js-al/ng-cordova.min.js"></script>
+    
+    <!-- app & controller js -->
+    <script src="js/app.js"></script>
+    <script src="js/app.template.js"></script>
+    <script src="js/app.billpay.js"></script>
+    <script src="js/app.fundTransfer.js"></script>
+    <script src="js/app.language.js"></script>
+    <script src="js/app.inAppBrowser.js"></script>
+    <script src="js/app.atmLocator.js"></script>
+    <script src="js/app.account.js"></script>
+    <script src="js/app.fundTransfer.js"></script>
+    <script src="js/app.inAppBrowser.js"></script>
+    <script src="js/app.activationRegistration.js"></script>
+    <script src="js/app.bankBranch.js"></script>
+    <script src="js/app.currencyRate.js"></script>
+    <script src="js/app.creditCard.js"></script>
+    
+    <script src="js/controllers.template.js"></script>
+    <script src="js/controllers.atmLocator.js"></script>
+    <script src="js/controllers.account.js"></script>
+	<script src="js/controllers.billpay.js"></script>
+	<script src="js/controllers.fundTransfer.js"></script>
+	<script src="js/controllers.language.js"></script>
+    <script src="js/controllers.inAppBrowser.js"></script>
+    <script src="js/controllers.activationRegistration.js"></script>
+    <script src="js/controllers.bankBranchLocation.js"></script>
+    <script src="js/controllers.currencyRate.js"></script>
+    <script src="js/controllers.creditCard.js"></script>
+    
+
+  	<!-- Fund Transfer -->
+  	<script type="text/javascript" src="js/js-lib/js-ft/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/js-lib/js-ft/fund.transfer.validation.js"></script>
+      
+  	<!-- Billpayment -->
+  	<script type="text/javascript" src="js/js-lib/js-bp/billpayment.js"></script>
+  	<script type="text/javascript" src="js/js-lib/autologout.js"></script> 
+  	
+  	<!-- security Type -->
+  	<script type="text/javascript" src="js/js-lib/read.sms.js"></script>
+  	<script type="text/javascript" src="js/js-lib/securityTypeAssigner.js"></script>
+  	
+  	<!-- swiper
+  	<link href="lib/swiper/swiper.min.css" rel="stylesheet">  
+  	<script src="lib/swiper/swiper.js"></script>
+  	<script src="lib/swiper/angular-swiper.js"></script>  -->
+    <!-- slider
+    <link href="lib/slider/thumbnail-slider.css" rel="stylesheet">  
+    <script src="lib/slider/thumbnail-slider.js"></script> -->
+
+  </head>
+
+  <body ng-app="app">
+
+    <ion-nav-view class="simobi-content"></ion-nav-view>
+    <div ng-controller="AppCtrl" class="hide-on-keyboard-open">
+      <!-- <div class="tabs">
+
+         <div id="thumbnail-slider">
+            <div class="inner">
+                <ul>
+                    <li ng-repeat="mainMenu in mainMenus | inArray:filterBy:'extraMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+                        <table class="table-slider-footer">
+                          <tr><td valign="center">
+                            <img ng-if="itIcon == true" class="img-slider-footer" src="css/img-app/{{mainMenu.icon}}"/>
+                            <img ng-if="markomIcon == true" class="img-slider-footer" src="css/img-app-markom-border/{{mainMenu.icon}}"/>
+                            <p class="font-slider-footer">{{mainMenu.code | translate}}</p>
+                          </td></tr>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </div> -->
+      
+	<div ng-if="themeMode == 'standar' || themeMode == 'list'" class="tabs-striped-extra tabs-background-footer-standar" >
+        <div class="tabs">
+          <ion-scroll direction="x" class="wide-as-needed">
+
+              <a class="button button-footer-standar footer-table" ng-repeat="mainMenu in mainMenus | inArray:filterBy:'extraMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+
+                  <table style="margin: 0px auto;width:100%;" class="">
+                    <tr>
+                      <td valign="center" ng-if="itIcon == true" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+                        <img class="image-default-footer" src="css/img-app/{{mainMenu.icon}}">
+                      </td>
+                      <td valign="center" ng-if="darkIcon == true" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+                        <img class="image-default-footer" src="css/img-app-dark/{{mainMenu.icon}}">
+                      </td>
+                      <td valign="center" ng-if="markomIcon == true" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+                        <img class="image-markom-footer" src="css/img-app/{{mainMenu.icon}}">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td valign="center" ng-if="itIcon == true" style="white-space:normal;">
+                       <p class="font-markom-footer-small">{{mainMenu.code | translate}}</p>
+                      </td>
+                      <td valign="center" ng-if="darkIcon == true" style="white-space:normal;">
+                       <p class="font-markom-footer-small">{{mainMenu.code | translate}}</p>
+                      </td>
+                      <td valign="center" ng-if="markomIcon == true" style="white-space:normal;">
+                       <p class="font-markom-footer-small">{{mainMenu.code | translate}}</p>
+                      </td>
+                    </tr>
+                </table>
+
+              </a>
+          </ion-scroll>
+        </div>
+      </div>  
+      
+      <div ng-if="themeMode == 'colorGrid'"  class="tabs-striped-extra tabs-background-footer-colorGrid" >
+        <div class="tabs">
+          <ion-scroll direction="x" class="wide-as-needed">
+
+              <a class="button button-footer-standar footer-table" ng-repeat="mainMenu in mainMenus | inArray:filterBy:'extraMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+
+                  <table style="margin: 0px auto;width:100%;" class="">
+                    <tr>
+                      <td valign="center" ng-if="itIcon == true" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+                        <img class="image-default-footer-colorGrid" src="css/img-app-colorGrid/{{mainMenu.icon}}">
+                      </td>
+                      <td valign="center" ng-if="darkIcon == true" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+                        <img class="image-default-footer" src="css/img-app-dark/{{mainMenu.icon}}">
+                      </td>
+                      <td valign="center" ng-if="markomIcon == true" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+                        <img class="image-markom-footer" src="css/img-app/{{mainMenu.icon}}">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td valign="center" ng-if="itIcon == true" style="white-space:normal;">
+                       <p class="font-markom-footer-small">{{mainMenu.code | translate}}</p>
+                      </td>
+                      <td valign="center" ng-if="darkIcon == true" style="white-space:normal;">
+                       <p class="font-markom-footer-small">{{mainMenu.code | translate}}</p>
+                      </td>
+                      <td valign="center" ng-if="markomIcon == true" style="white-space:normal;">
+                       <p class="font-markom-footer-small">{{mainMenu.code | translate}}</p>
+                      </td>
+                    </tr>
+                </table>
+
+              </a>
+          </ion-scroll>
+        </div>
+    </div>
+	
+	<script id="templates/popover.html" type="text/ng-template">
+      <ion-popover-view style="height: 340px;">
+        <ion-content>
+          <div class="list">
+            <a class="button popover-table" style="width: 100%;" ng-click="showDetailSummary('{{accNumber}}','{{accType}}')">
+  				Detail Summary
+			</a>
+			<a class="button popover-table" style="width: 100%;" ng-click="doAccountStatementResult('{{accNumber}}','today')">
+  				Today Statement
+			</a>
+			<a class="button popover-table" style="width: 100%;" ng-click="doAccountStatementResult('{{accNumber}}','curMonth')">
+  				Current Month Statement
+			</a>
+			<a class="button popover-table" style="width: 100%;" ng-click="doAccountStatementResult('{{accNumber}}','1MonthAgo')">
+  				1 Month Ago Statement
+			</a>
+			<a class="button popover-table" style="width: 100%;" ng-click="doAccountStatementResult('{{accNumber}}','2MonthAgo')">
+  				2 Month Ago Statement
+			</a>
+			<a class="button popover-table" style="width: 100%;" ng-click="doAccountStatementResult('{{accNumber}}','3MonthAgo')">
+  				3 Month Ago Statement
+			</a>
+          </div>
+        </ion-content>
+      </ion-popover-view>
+  </script>
+	<script id="templates/popoverCC.html" type="text/ng-template">
+      <ion-popover-view>
+        <ion-content>
+          <div class="list">
+            <a class="button popover-table" style="width: 100%;" ng-click="showDetailSummaryCC('{{accNumber}}')">
+  				Detail Credit Card
+			</a>
+			<a class="button popover-table" style="width: 100%;" ng-click="showTransactionDetailCC('{{accNumber}}')">
+  				Transaction Detail Credit Card
+			</a>
+          </div>
+        </ion-content>
+      </ion-popover-view>
+  </script>
+  <script id="templates/popoverCurrRate.html" type="text/ng-template">
+      <ion-popover-view>
+        <ion-content>
+          <div class="list">
+            <a class="button popover-table" style="width: 100%;" ng-click="doFundTransfer()">
+              Do fund transfer
+            </a>
+          </div>
+        </ion-content>
+      </ion-popover-view>
+  </script>
+  </body>
+</html>
+
+
+
+   <!--  <ion-footer-bar class="foo-simobi-extra" ng-controller="AppCtrl"> -->
+        <!-- <ion-scroll direction="x" class="wide-as-needed">
+            <a class="button button-outline button-stable" ng-repeat="mainMenu in mainMenus | inArray:filterBy:'extraMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+               <!- -  {{mainMenu.name}} - ->
+                
+                <table>
+                  <tr>
+                    <td style="vertical-align:top;padding-top:3px;">
+                        <img width="37px" height="37px" src="css/img-app/{{mainMenu.icon}}">
+                    </td> 
+                  </tr>
+                </table>
+            </a>
+        </ion-scroll> -->
+
+     <!--    <ul>
+          <li>
+              <ul id="navs">
+                <li ng-repeat="mainMenu in mainMenus | inArray:filterBy:'extraMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+                  <a class="image-simobi-extra">
+                    <img width="40px" height="40px" src="css/img-app/{{mainMenu.icon}}">
+                  </a>
+                </li>
+              </ul>
+          </li>
+          <li>
+            <a class="tab-item a-simobi-extra" href="#" ng-click="extraMenuShow();">
+             <i id="extraMenu" ng-model="extraMenu" ng-class="{'ion-close-circled icon-simobi-ionic-large': !extraMenu, 'ion-plus-circled icon-simobi-ionic-large': extraMenu}"></i>
+            </a>
+          </li>
+        </ul>
+    </ion-footer-bar> -->
+
+     <!--  <div class="tabs-striped-extra">
+        <div class="tabs"> -->
+              <!-- <ul id="navs" data-open="{{extraMenuLabel}}" data-close="{{extraMenuLabel}}" ng-model="extraMenu" on-tap="extraMenuShow();">
+                <li ng-repeat="mainMenu in mainMenus | inArray:filterBy:'extraMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+                  <a class="image-simobi-extra">
+                    <img width="30px" height="30px" src="css/img-app/{{mainMenu.icon}}">
+                  </a>
+                </li>
+              </ul> -->
+          <!-- <a class="tab-item a-simobi-extra" href="#" ng-click="extraMenuShow();">
+             <i id="extraMenu" ng-model="extraMenu" ng-class="{'ion-close-circled icon-simobi-ionic': !extraMenu, 'ion-plus-circled icon-simobi-ionic': extraMenu}"></i>
+            </a> -->
+       <!--  </div>
+      </div> -->
+
+      <!-- <a class="tab-item" href="#" ng-click="backToHome();">
+          <i class="icon ion-home"></i>
+          Home
+        </a>
+        <a class="tab-item" href="#" ng-click="contactUs();">
+          <p>Contact Us</p>
+        </a>
+        <a class="tab-item" href="#" ng-click="ionicLoading();">
+          <i class="icon ion-plus-circled"></i>
+        </a> -->

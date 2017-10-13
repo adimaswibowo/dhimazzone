@@ -1,0 +1,172 @@
+<ion-view cache-view="false" view-title="{{ 'payPurchase' | translate }}">
+<!-- <div class="tabs-striped tabs-top tabs-background-assertive tabs-color-light">
+    <div class="tabs">
+      <a class="tab-item" ng-class="{'active font-simobi-billpay-active': visibleFromPaymentList, 'inactive font-simobi-billpay-inactive': !visibleFromPaymentList}" href="#" ng-click="fromPaymentListMenu();">
+        <p>{{ 'button_fromPaymentList' | translate }}</p>
+      </a>
+      <a class="tab-item" ng-class="{'active font-simobi-billpay-active': visibleAllBillerList, 'inactive font-simobi-billpay-inactive': !visibleAllBillerList}" href="#" ng-click="allBillerListMenu();">
+        <p>{{ 'button_fromNewPayment' | translate }}</p>
+      </a>
+    </div>
+  </div> -->
+
+<div class="tabs-striped tabs-top tabs-background-lightgrey tabs-color-light">
+    <div class="tabs">
+
+      <div ng-class="{'simobi-tab-left-active': visibleFromPaymentList, 'simobi-tab-left-inactive': !visibleFromPaymentList}" type="submit" ng-click="fromPaymentListMenu();" ><p>{{'button_fromPaymentList'|translate}}</p></div>
+
+      <div ng-class="{'simobi-tab-right-active': visibleAllBillerList, 'simobi-tab-right-inactive': !visibleAllBillerList}" type="submit" ng-click="allBillerListMenu();" ><p>{{'button_fromNewPayment'|translate}}</p></div>
+
+    </div>
+  </div>
+
+  <!-- <div class="tabs-striped tabs-color-assertive">
+    <div class="tabs">
+      <a class="tab-item" href="#" ng-click="backToBillpay();"> 
+        <i class="icon-left ion-chevron-left button-dark"></i>
+       	Back
+      </a>
+      <a class="tab-item" href="#" ng-click="backToIndex();">
+        <i class="icon ion-home"></i>
+        Home
+      </a>
+    </div>
+  </div> -->
+	<ion-content class="simobi-background-content">
+	<br><br>
+	<!-- <div ng-controller="TranslateController" align="right">
+	  <button ng-click="changeLanguage('id')" translate="Indo" class="button icon-left"></button>
+	  <button ng-click="changeLanguage('en')" translate="English" class="button icon-left"></button>
+	</div> -->
+		<!-- <ion-scroll direction="y" class="wide-as-needed"> -->
+			<div class="list list-inset" align="center">
+				<!-- <div> -->
+					<!-- <button class="button icon-left ion-chevron-left button-clear button-dark" ng-click="backToBillpay();">Back</button>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<button class="button icon-left ion-home" ng-click="backToIndex();">Home</button> -->
+				<!-- </div> -->
+
+				<div align="center" id="billpayOption" ng-show="visibleFromPaymentList == 'true'">
+
+					
+					<table width="100%">
+						<tr>
+							<td align="left">
+								<!-- <div class="item item-divider">
+									{{ 'purchasePayment_fromPaymentList' | translate }}
+								</div> -->
+								<label class="item item-input">
+								    <i class="icon ion-search placeholder-icon"></i>
+								    <input type="text" name='fromPaymentList' id='fromPaymentList' ng-click="openPopupFromPaymentList();" placeholder="{{'select_saved_merchant_label' | translate}}" size="41">
+								</label>
+							</td>
+						</tr>  
+					</table>
+					
+					<!-- <table width="100%">
+				      <tr>
+				        <td>
+			        		<div class="item item-divider">
+								{{'purchasePayment_targetPayment' | translate}} :
+							</div>
+							<a href="#" class="item item-icon-right" ng-model="allBillerSelect" ng-repeat="allBiller in allBillerObjectFav" ng-click="chooseBiller({{allBiller}});" id="{{allBiller.id}}">
+							    <i class="icon ion-chevron-right icon-simobi-ionic-verysmall"></i>
+							     {{allBiller.name}}
+						    </a>
+				        </td>
+				      </tr>
+				    </table> -->
+
+					<!-- <table border="0" cellspacing="0" >
+						<tr>
+							<td align="left">
+								<p>{{ 'purchasePayment_fromPaymentList' | translate }}</p>
+								<label class="item item-input">
+								    <i class="icon ion-search placeholder-icon"></i>
+								    <input type="text" name='fromPaymentList' id='fromPaymentList' ng-click="showFromPaymentList();" placeholder="Select or search a Saved Merchant in the list" size="41">
+								</label>
+							</td>
+						</tr>  
+					</table> -->
+				</div>
+
+				<div align="center" id="billpayOption" ng-show="visibleAllBillerList == 'true'">
+
+					<!-- <table width="100%">
+						<tr>
+							<td align="left">
+								<p>{{ 'purchasePayment_targetPayment' | translate }}</p>
+								<label class="item item-input">
+								    <i class="icon ion-search placeholder-icon"></i>
+								    <input type="text" name='allBillerList' id='allBillerList' ng-click="openPopupAllBillerList();" placeholder="Select or search a All Merchant in the list" size="41">
+								</label>
+							</td>
+						</tr>  
+					</table> -->
+
+					<table width="100%">
+				      <tr>
+				        <td>
+				        	<!-- <div class="item item-divider">
+								{{ 'purchasePayment_targetPayment' | translate }}
+							</div> -->
+								<label class="item item-input">
+								    <i class="icon ion-search placeholder-icon"></i>
+								    <input type="text" name='allBillerList' id='allBillerList' ng-click="openPopupAllBillerList();" placeholder="{{'select_all_merchant_label' | translate}}" size="41">
+								</label>
+							<a href="#" class="item item-icon-right" ng-model="allBillerSelect" ng-repeat="allBiller in allBillerObjectFav" ng-click="chooseBiller({{allBiller}});" id="{{allBiller.id}}">
+							    <i class="icon ion-chevron-right icon-simobi-ionic-verysmall"></i>
+							     {{allBiller.name}}
+						    </a>
+				        </td>
+				      </tr>
+				    </table>
+
+					<!-- <table border="0" cellspacing="0" >
+						<tr>
+							<td align="left">
+								<p>{{ 'purchasePayment_targetPayment' | translate }}</p>
+								<label class="item item-input">
+								    <i class="icon ion-search placeholder-icon"></i>
+								    <input type="text" name='allBillerList' id='allBillerList' ng-click="showFromBillerList()" placeholder="Select or search a All Merchant in the list" size="41">
+								</label>
+							</td>
+						</tr>  
+					</table> -->
+				</div>
+		</div>
+
+				<!-- <div align="center" id="billpayOption" ng-show="visibleMenuBillpay == 'true'">
+				<p class="m_content-title-inputbillpay">{{ 'purchasePayment_title' | translate }}</p>
+					<table>
+						<tr> 
+				           	<td class="td-label-left" colspan="2"> 
+				           	<div colspan="2">
+				            	<div class="wellSimobi" align="left">
+									<ul class="tabsSimobi">
+										<li ng-repeat="tab in tabs" ng-class="{active: current == tab.name}">
+											<span ng-bind="tab.name" ng-click="toggleTab(tab)"></span>
+										</li>
+									</ul>
+									<div ng-include="tab" class="tabsSimobi-data"></div>
+								</div>
+				           	</div>
+							</td>
+				       </tr>    
+				      </table>
+				</div>
+			</div> -->
+		<!-- </ion-scroll> -->
+	<div class="footer-space"/>
+	</ion-content>	
+</ion-view>
+
+
+
+
+	
+
+
+
+	
+	

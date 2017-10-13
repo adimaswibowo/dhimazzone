@@ -1,0 +1,115 @@
+<ion-view cache-view="false" view-title="{{'language'|translate}}">
+	<ion-content  ng-controller="TranslateController" class="simobi-background-content">
+	<br>
+	<p class="m_content-title-inputbillpay">{{ 'changeLanguage' | translate }}</p>
+	<table width="100%"><tr><td align"center">
+	    <div class="row">
+	        <div class="col col-50">
+	        	<div style="margin: 0 auto; width:80px;height:80px;">
+	        		<table style="margin: 0px auto;">
+	        			<tr>
+	        				<td align="center" ng-click="changeLanguage('id')">
+	        					<img src="css/img-flag/IDR.png" width="80px;" height="60px;">
+	        				</td>
+	        			</tr>
+	        			<tr>
+	        				<td style="margin: 0 auto; width:80px;height:80px;" ng-click="changeLanguage('id')">
+	        					<p class="font-simobi-lang-active font-simobi-black">{{'bahasa'|translate}}</p>
+	        				</td>
+	        			</tr>
+	        		</table>
+				</div>
+	        </div>
+	        <div class="col col-50">
+	        	<div style="margin: 0 auto; width:80px;height:80px;">
+	        		<table style="margin: 0px auto;">
+	        			<tr>
+	        				<td>
+	        					<table style="margin: 0px auto;">
+	        						<tr>
+	        							
+	        						</tr>
+	        					</table>
+	        				</td>
+	        			</tr>
+	        			<tr>
+	        				<td>
+	        					<table style="margin: 0px auto;">
+	        						<tr>
+	        							<td align="center" ng-click="changeLanguage('en')">
+	        								<img src="css/img-flag/USD.png" width="80px;" height="60px;">
+	        							</td>
+	        						</tr>
+	        					</table>
+	        				</td>
+	        			</tr>
+	        			<tr>
+	        				<td style="margin: 0 auto; width:80px;height:80px;" ng-click="changeLanguage('en')">
+	        					<p class="font-simobi-lang-active font-simobi-black">{{'english'|translate}}</p>
+	        				</td>
+	        			</tr>
+	        		</table>
+	        	</div>
+	        </div>
+	    </div>
+</td></tr></table><br>
+	<!-- <div class="list">
+		<label class="item item-input item-select">
+		    <div class="input-label">
+		      {{'change_icon'|translate}}
+		    </div>
+		    < !- -select ng-change="changeIcon()">
+		      <option value="itIcon">Default Icon</option>
+		      <option value="markomIcon">Markom Icon</option>
+		    </select - - >
+		    <select name="repeatSelect" id="repeatSelect" ng-model="selectedItem" ng-change="changeIcon()">
+		      <option ng-repeat="option in data.availableOptions" ng-model="selectedItem"  ng-selected="selectedItem == option.id" value="{{option.id}}" >
+		      	{{option.name}}
+		      </option>
+		    </select>
+		</label>
+	</div> -->
+
+	<div class="list">
+		<label class="item item-input item-select">
+		    <div class="input-label">
+		      {{'change_theme'|translate}}
+		    </div>
+		    <!-- <select name="selectTheme" id="selectTheme" ng-model="selectedTheme" ng-change="changeTheme()">
+		      <option ng-repeat="theme in dataTheme.themeOptions" ng-model="selectedTheme"  ng-selected="selectedTheme == theme.id" value="{{theme.id}}" >
+		      	{{theme.name}}
+		      </option>
+		    </select> -->
+
+		    <select name="selectTheme" id="selectTheme" ng-model="selectedTheme" ng-options="theme.id as theme.name for theme in dataTheme.themeOptions" ng-change="changeTheme();">
+              </select>
+
+		</label>
+	</div>
+
+
+	<div class="list">
+        <div class="item range range-energized">
+		  <span class="smallA">{{'font_size'|translate}}</span>
+		  <input id="range" type="range" min="1" max="3" ng-model="fontSizeId" ng-change="changeFontSize(fontSizeId)">
+		  <span>{{fontSizeName}}</span>
+		</div>
+	</div>
+
+	<div class="list list-inset-simobi">
+	    <button class="button button-block button-positive" type="submit" ng-click="setDefaultFontSize();">{{'default_font_size'|translate}}</button>
+    </div>
+
+	<div class="footer-space"/> 
+	</ion-content>	
+</ion-view>
+
+
+
+
+	
+
+
+
+	
+	

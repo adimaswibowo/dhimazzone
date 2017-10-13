@@ -1,0 +1,25 @@
+<ion-view view-title="{{'activation_confirm'|translate}}">
+  <ion-content class="simobi-background-content">
+  	<div class="list list-inset">
+  	  <label class="item item-input">
+	    <input type="tel" name="mobileNumber" id="mobileNumber" maxlength="50" placeholder="{{'mobile_number'|translate}}"/>
+	  </label>
+	  <label class="item item-input">
+	    <input type="text" name="email" id="email" maxlength="255" placeholder="{{'email'|translate}}"/>
+	  </label>
+	  <label class="item item-checkbox item-text-wrap">
+	  	<label class="checkbox">
+	      <input type="checkbox" id="doAgreeClick" name="doAgreeClick"/>
+	    </label>
+	    {{'agreed'|translate}}
+	  </label>
+	  <button class="button button-small button-assertive" ng-click="doLogoutActivation();">
+      	Logout
+      </button>
+  	  <button class="button button-block button-positive" ng-click="doSubmitEmailMdn();">
+	  	Submit
+	  </button>
+  	</div>
+  	<div class="footer-space"/>
+  </ion-content>
+</ion-view>

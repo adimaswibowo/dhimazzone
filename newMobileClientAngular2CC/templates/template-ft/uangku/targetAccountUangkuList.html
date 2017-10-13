@@ -1,0 +1,40 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">{{'fundTransfer_targetAccountUangkuList' | translate}}</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closePopupTargetAccountUangkuList()">Close</button>
+    </div>
+  </ion-header-bar>
+ 
+  <table width="100%">
+    <tr>
+      <td style="vertical-align:top;padding-top:45px;">
+        <div>
+          <label class="item item-input">
+              <i class="icon ion-search placeholder-icon"></i>
+              <input type="text" ng-model="query" placeholder="Search">
+          </label>
+        </div>
+      </td>
+    </tr>
+  </table>
+  
+  <ion-content>
+    <table width="100%">
+      <tr>
+        <td style="vertical-align:top;padding-top:45px;">
+            <ion-item class="item item-text-wrap" ng-repeat="targetAccount in targetAccountUangkuList | filter:query" ng-click="copyTargetAccountUangku(targetAccount.id, targetAccount.label,'inbank',targetAccount.transferType);" id="{{targetAccount.id}}|{{targetAccount.transferType}}">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                   <tr>
+                     <td class="wrapTD">
+                        <span class="txtWrap">{{targetAccount.label}}</span>
+                      </td>
+                   </tr>
+              </table>
+            </ion-item>
+        </td>
+      </tr>
+    </table>
+  </ion-content>
+
+</ion-modal-view>

@@ -1,0 +1,39 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Currency</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closePopupCurrencyList()">Close</button>
+    </div>
+  </ion-header-bar>
+ 
+  <table width="100%">
+    <tr>
+      <td style="vertical-align:top;padding-top:45px;">
+        <div>
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" ng-model="accountListFilter" placeholder="Search">
+            </label>
+        </div>
+      </td>
+    </tr>
+  </table>
+  
+  <ion-content>
+    <table width="100%">
+      <tr>
+        <td style="vertical-align:top;padding-top:45px;">
+          <div>
+          	  <ion-item class="item-text-wrap"  ng-click="chooseCurrencyList({'id':'IDR'});" id="IDR">
+                   <table width="100%"><tr><td width="50%">IDR</td><td align="right" width="50%"><img src='css/img-currency/IDR.png'  style="height: 30px;"></td></tr></table>
+              </ion-item>
+              <ion-item class="item-text-wrap" ng-model="curr.myCurrencyListSelect" ng-repeat="myCurrencyList in curr.myCurrencyListObjectList | unique: 'id'" ng-if="myCurrencyList.id!='IDR'" ng-click="chooseCurrencyList({{myCurrencyList}});" id="{{myCurrencyList.id}}">
+                   <table width="100%"><tr><td width="50%">{{myCurrencyList.id}}</td><td align="right" width="50%"><img src='css/img-currency/{{myCurrencyList.id}}.png'  style="height: 30px;"></td></tr></table>
+              </ion-item>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </ion-content>
+
+</ion-modal-view>

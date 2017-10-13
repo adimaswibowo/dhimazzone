@@ -1,0 +1,138 @@
+<ion-view cache-view="false" view-title="Billpayment">
+<ion-content ng-controller="BillpayDetailType8Ctrl" class="simobi-background-content">
+<p class="m_content-title-inputbillpay">{{ 'purchasePayment_title' | translate }}</p>
+<p class="m_content-title-inputbillpay">{{billpaymentMerchantType}}</p>
+<hr>
+<div class="list list-inset" align="center">
+<!-- <button class="button icon-left ion-chevron-left button-clear button-dark" ng-click="backToBillpay();">{{ 'button_back' | translate }}</button> -->
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="button icon-left ion-home" ng-click="backToIndex();">Home</button><br><br> -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+<tr><td>
+<div class="list list-inset" align="center">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+           <td class="td-label-left">
+           	<div ng-show="visibleAccNumber == 'true'"> 
+				<!-- <p class="m_content-caption-accnumber"> {{ 'purchasePayment_accountNumber' | translate }} </p> -->
+				<!-- <select name="accountNumber" id="accountNumber" class="m_content-combobox-accnumber" ng-model="accSelect" ng-options="accSelect.id as accSelect.label for accSelect in accListObject"> </select> -->
+          <label class="item item-input">
+              <i class="icon ion-search placeholder-icon"></i>
+              <input type="text" ng-model="queryAccountList" name='accountNumber' id='accountNumber' ng-click="openPopupAccounttList();" placeholder="{{'search_account' |translate}}" size="41">
+          </label>
+          <div ng-show="hiddenInputBillpay == 'true'"> 
+            <input ng-model='accountNumberSelect' type='text' style="visibility: hidden;" name='accountNumberHidden' id='accountNumberHidden'/>
+          </div>
+			</div>
+			
+			<div ng-show="visibleInqInput == 'true'"> 
+				<br><!-- <p class="m_content-caption">{{ subscriberNoLabel }}</p> -->
+          			
+          			<div ng-show="visibleSubcriberText == 'true'"> 
+                  <label class="item item-input">
+                      <input type="text" ng-model="subscriberNo" name='subscriberNo' id='subscriberNo' placeholder="{{ subscriberNoLabel }}" maxlength="16">
+                  </label>
+                </div>
+                <div ng-show="visibleSubcriberTel == 'true'"> 
+                  <label class="item item-input">
+                      <input type="tel" ng-model="subscriberNo" name='subscriberNo' id='subscriberNo' placeholder="{{ subscriberNoLabel }}" maxlength="16">
+                  </label>
+                </div>
+	           	
+       			<br><input type="button" name="buttonRetrieveBp" class="button button-block button-positive" id="buttonRetrieveBp" ng-click="inquiryBillPay();"/>
+       			
+          		</div>
+          		
+          		<div ng-show="visibleSaveToBillPayList == 'true'"> 
+            <ul class="list">
+                <p class="m_content-note"> {{ 'purchasePayment_nameSaveToBP' | translate }}</p>
+                <li class="item item-toggle"><br>
+                   <label class="toggle toggle-balanced">
+                     <input type="checkbox" id="saveToBillPaymentList" name="saveToBillPaymentList" ng-click="saveToBillPayList();">
+                     <div class="track">
+                       <div class="handle"></div>
+                     </div>
+                   </label>
+                </li>
+              </ul>
+           		<!-- <br>
+           		<label class="toggle toggle-balanced">
+					<input type="checkbox" id="saveToBillPaymentList" name="saveToBillPaymentList" ng-click="saveToBillPayList();" />
+					<div class="track">
+					<div class="handle"></div>
+					</div>
+					<label class="m_content-note">{{ 'purchasePayment_nameSaveToBP' | translate }}</label>
+				</label> -->
+       		<!-- <input name="saveToBillPaymentList" class="m_content-checkbox" id="saveToBillPaymentList" type="checkbox"  ng-click="saveToBillPayList();">-->
+       		</div>
+           </td>
+       </tr>
+       <tr>
+           <td class="td-label-left" id="loadDataInquiry">
+           <div ng-show="hiddenInputBillpay == 'true'"> 
+           	<input type="text" style="visibility: hidden;" name="billingInfo" id="billingInfo" />
+           	<input type="text" style="visibility: hidden;" name="displayString" id="displayString" />
+           	<input type="text" style="visibility: hidden;" name="variableBankCharges" id="variableBankCharges" />
+           	<input type="text" style="visibility: hidden;" name="amount" id="amount" ng-model="amount" />
+           	<input type="text" style="visibility: hidden;" name="amountId" id="amountId" ng-model="amount" />
+           </div>
+           </td>
+       </tr>
+       <tr>
+           <td class="td-label-left">	
+			<div ng-show="visibleAmount == 'true'"> 
+				<!-- <br>
+            	<p class="m_content-caption-currency"> {{ 'purchasePayment_nameAmount' | translate }} </p> 
+            	<label class='m_content-field-currency'> {{ merchantCurrency }} </label> &nbsp;&nbsp; 
+            	<input maxlength="13" name="amount" class="m_content-inputtext-currency" id="amount" size="12" type="tel" onkeyup="addCommas2(this.value);" /> -->
+            </div> 
+                   
+            <div ng-show="visibleDescription == 'true'"> 
+              <br>
+              <!-- <p class="m_content-caption">{{ 'purchasePayment_nameDescription' | translate }} </p>  -->
+              <label class="item item-input">
+                 <input maxlength="16" name="description" id="description" size="16" type="text" ng-model="description" placeholder="{{ 'purchasePayment_nameDescription' | translate }}" />
+              </label>
+              <p class="m_content-note">{{ 'purchasePayment_descNote' | translate }} </p> 
+            </div>
+
+           </td>
+       </tr>
+        <tr>
+           <td class="td-label-left" colspan="2" id ="loadDataSecurityType"> 
+            <div ng-show="visibleBillpayST == 'true'"> 
+              <br>
+              <input type="button" nodeST="buttonCheckST" class="button button-block button-positive" name="buttonConfirmST" id="buttonConfirmST" value="Submit" ng-click="checkSecurityTypeAssigner();" /> 
+          <input type="button" nodeST="buttonCheckST" value="Cancel" class="button button-assertive" id="cancelBP" ng-click="backToBillpay();" />
+      </div>
+      <div id="securityTypeConfirmation" class="securityTypeConfirmation"></div>   
+            <div ng-show="visibleBillpayButton == 'true'"> 
+              <br>
+        <input type="button" class="button button-block button-positive" nodeST="buttonConfirm" name="button" id="confirmBP" value="Submit" ng-click="doConfirmBillpaymentInput();" /> 
+          <input type="button" class="button button-assertive" nodeST="buttonCancel"  name="buttonCancelST" id="buttonCancelST" value="Cancel" ng-click="cancelCheckSecurity();"/> 
+      </div>           
+           </td>
+       </tr>  
+</table>   
+</div>        
+</td></tr>
+</table>
+</div>
+    <div class="list list-inset" align="center">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
+          <tr>
+             <td align="left">
+                  <div class="m_footer-noteheader">{{ 'msg_note' | translate }}</div>
+                  <ol class="m_footer-notefield">
+                    <li>{{ 'purchasePayment_note1' | translate }}</li>
+                    <li>{{ 'purchasePayment_note2' | translate }}</li>
+                    <li>{{ 'purchasePayment_note3' | translate }}</li>
+                  </ol>
+            </td>
+          </tr>
+        </table>
+      </div>
+<div class="footer-space"/>
+</ion-content>
+</ion-view>

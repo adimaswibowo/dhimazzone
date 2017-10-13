@@ -1,0 +1,50 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">{{'purchasePayment_billPaymentList' | translate}}</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closePopupFromPaymentList()">Close</button>
+    </div>
+  </ion-header-bar>
+ 
+  <table width="100%">
+    <tr>
+      <td style="vertical-align:top;padding-top:45px;">
+        <div>
+          <label class="item item-input">
+              <i class="icon ion-search placeholder-icon"></i>
+              <input type="text" ng-model="fromPaymentListFilter.label" placeholder="Search">
+          </label>
+        </div>
+      </td>
+    </tr>
+  </table>
+  
+  <ion-content>
+    <table width="100%">
+      <tr>
+        <td style="vertical-align:top;padding-top:45px;">
+          <div>
+            <ion-item class="item item-text-wrap" ng-model="savedMerchantSelect" ng-repeat="savedMerchant in savedMerchantObject | filter:fromPaymentListFilter" ng-click="chooseSavedMerchant({{savedMerchant}});" id="{{savedMerchant.id}}">
+               {{savedMerchant.label}}
+            </ion-item>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </ion-content>
+
+</ion-modal-view>
+
+<!-- <div>
+	<table border="0" cellspacing="0" >
+			<tr>
+				<td align="left">
+					<p>{{ 'purchasePayment_fromPaymentList' | translate }}</p>
+					<label class="item item-input">
+					    <i class="icon ion-search placeholder-icon"></i>
+					    <input type="text" name='fromPaymentList' id='fromPaymentList' ng-click="showFromPaymentList();" placeholder="Select or search a savedMerchant in the list" size="41">
+					</label>
+				</td>
+			</tr>  
+	</table>
+</div> -->

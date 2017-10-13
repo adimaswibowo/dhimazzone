@@ -1,0 +1,318 @@
+configPathC:\sts-bundle\sts-3.6.4.RELEASE\AMB-CMS.cfg.properties
+
+cardInfo: { "cardId" :  null  , "customerId" :  null  , "expirationDate" :  null  , "plasticId" :  null  , "errorDesc" : "Illegal state. Message type GET_CARD_INFO is not supported" , "status" : 0 , "errorCode" : "GATEWAY_ERROR" , "cardStatus" :  null }
+cardList: { "errorDesc" :  null  , "status" : 0 , "errorCode" : "SUCCESS" , "card" : [ { "cardId" : "112107" , "embossName" : "PERSO USD PP" , "expirationDate" : { "$date" : "2021-09-29T16:00:00.000Z"} , "networkDesc" : "China UnionPay (CUP)" , "networkId" : 55 , "cardStatusDesc" : "VALID CARD" , "cardMask" : "623444******0466" , "issueDate" : { "$date" : "2016-09-04T16:00:00.000Z"} , "cardType" : "DEBIT" , "cardStatus" : "CHST0" , "productId" : "500" , "primaryCard" :  null  , "customerId" : "1000000185" , "plasticId" : "27409" , "primPosAcct" : "6234440000000466" , "personId" : "1000000232" , "productName" : "Perso USD Prepaid Card" , "memNumber" : 0 , "primAtmAcct" : "6234440000000466" , "cardNumber" : "623444******0466"}]}
+
+
+String cardString = null;
+cardString = ApplicationFactory.convertToJson(cardMap);
+JSONObject jsonDataRegistration = new JSONObject(mapDataRegistration);
+
+System.out.println("response getPersonInfo: " + Utility.stringify(response));
+
+
+1000000383 gerral ch
+1000000189 lian
+1000000185 dini
+710 firman
+1000000187 consta
+
+
+BENJAMIN LIM ==>Personal
+Card_number
+6234441000001173
+Mobile_number
+6582012479
+email
+lim.shihchia@gmail.com
+ID KTP
+B600600301
+BirthDate
+010190
+
+CLARA 17012017 LIM ==>corporate
+Card_number
+6292710000001121
+Mobile_number|e8f889afcd3d0df5040f869d31b4bd47
+6586885338
+email
+chese@shentonworld.com.sg
+ID KTP
+C700700102
+BirthDate
+070701
+
+
+chese |a997fd716971f3d91277e83cda540c5d
+
+62927110000001301
+1000000185 Cifcode
+
+1000000256 Cifcode
+513a00a7c116af87b20db5bba16016d5
+
+aae441e3ce3eda8bccfc5da8d8082bec
+
+corporate|personal
+
+1. rename field login_name di table app_user jadi begini: xxadimas (tambah xx di depan login_name)
+2. delete data di field mobile_number di table app_user
+3. delete record account yg terkait di table Account. klo yg gw lakuin tadi gw hapus semua account karna gw pengen bersihin.
+4. rename cif_code di table customer menjadi : xx102389 (kasih prefix xx depannya)
+
+
+1.Unable to process transaction ==>(CardStatus Bernilai Null)Not Issue
+2.test temporary block untuk card no 6234440000033202 sudah dilakukan temporary block
+  tetapi di IB status yang tampil masih valid card (done tambahan reload)
+
+
+3. register no kartu 6234440000000466, muncl pesan get card list fail ==>(Local Jalan, Uat Fail),,Not Issue
+
+
+
+
+
+===============Deployy=================
+1. ssh root@182.23.52.11
+2. password: wowkeren
+3. /usr/local/tomcat/bin/
+ ./shutdown.sh
+ ./startup.sh
+
+4. /usr/local/tomcat/webapps
+ rm -rf PersonalBanking.war PersonalBanking
+
+5. /usr/local/tomcat/webapps/PersonalBanking 
+ ln -s newMobileClientAngular2Desktop main
+
+===============Deployy=================
+
+
+System.out.println("===========dimas bikin===========");
+		//	GetCardsListResponse Testter=CardManagementUtility.getCardsList(cardNo, customer);
+			GetCardsListResponse Testter=CardManagementUtility.getCardsList("6234440000000466", null);
+			System.out.println ("getCardsList dimas: "+Utility.stringify(Testter));
+			
+		//	GetCardInfoResponse Testter2=CardManagementUtility.getCardInfo(cardNo);
+			GetCardInfoResponse Testter2=CardManagementUtility.getCardInfo("6234440000000466");
+			System.out.println ("getCardInfo dimas: "+Utility.stringify(Testter2));
+		
+//			//	GetCardLimitsResponse cardLimitnya=CardManagementUtility.getCardLimits(cardId, limitId)
+//			GetCardLimitsResponse cardLimitnya=CardManagementUtility.getCardLimits("128098", null);
+//			System.out.println ("getCardLimits dimas: "+Utility.stringify(cardLimitnya));
+			
+//		//	GetPersonInfoResponse Testter3=CardManagementUtility.getPersonInfo(personId);
+//			GetPersonInfoResponse Testter3=CardManagementUtility.getPersonInfo("741");
+//			System.out.println ("getPersonInfo dimas: "+Utility.stringify(Testter3));
+System.out.println("===========dimas end===========");
+
+
+
+6292710000001295
+C700700400
+lieanto.sofian@smmf.co.id
+628812365366
+01011990
+
+http://182.23.52.14/SmsAlert/app/sendOtp/IB/IB-999914868001/6281585443977			
+
+
+
+
+
+
+
+6292710000001295
+628812365366
+user 	:user1
+password:123
+
+
+6234440000000771
+6586885338
+user 	:chese
+password:123456
+
+
+6234441000000969
+user 	:bbblim
+password:123456
+
+6292711000001160
+6593373262
+user	:user2
+password:123
+
+
+custCheck = CustomerServiceBO.getInstance().getByAccountId(accountId)
+
+
+cardList.add("6234440000000466");
+cardList.add("6292711000000022");
+cardList.add("6234440000027881");
+cardList.add("6234441000000035");
+cardList.add("6234440000033194");
+cardList.add("6234440000000466");
+cardList.add("6292711000000022");
+cardList.add("6292710000002244");
+cardList.add("6234440000033194");
+
+
+654321
+9de8619a51dbffaf
+
+123456
+9c47c6dbd3e3ae4f
+
+
+
+
+http://10.49.42.245:7003/epin/Epin?wsdl 
+http://10.20.210.4:7003/gateway/Cms?wsdl
+
+
+
+D:\workspaceIB\IBAMB\src\com\ams\ibanking\backoffice\bo\BO.java: done
+D:\workspaceIB\IBAMB\src\com\ams\ibanking\backoffice\bo\WMIBO.java:
+D:\workspaceIB\IBAMB\src\com\ams\ibanking\backoffice\boV2\BO.java: done
+D:\workspaceIB\IBAMB\src\com\ams\ibanking\connector\CorebankManager.java:
+D:\workspaceIB\IBAMB\src\com\ams\ibanking\connector\OldTemenosConnector.java:
+D:\workspaceIB\IBAMB\src\com\ams\ibanking\connector\security\SecurityViaUMGConnector.java:
+D:\workspaceIB\IBAMB\src\com\ams\ibanking\connector\TemenosClient.java:
+D:\workspaceIB\IBAMB\src\com\ams\ibanking\connector\TemenosConnector.java:
+D:\workspaceIB\IBAMB\src\com\ams\ibanking\connector\UMGConnector.java:
+D:\workspaceIB\IBAMB\src\com\ams\ibanking\connector\WMIConnector.java:
+D:\workspaceIB\IBAMB\src\com\ams\ibanking\frontoffice\boV2\SessionHandler.java:
+D:\workspaceIB\IBAMB\src\com\ams\ibanking\frontoffice\SetupAccountForm.java:
+D:\workspaceIB\IBAMB\src\com\ams\ibanking\unittest\FundTransferTest.java:
+D:\workspaceIB\IBAMB\src\com\ams\ibanking\unittest\TransferListTest.java:
+D:\workspaceIB\IBAMB\src\com\ams\ibanking\unittest\UserActivationTest.java:
+D:\workspaceIB\IBAMB\src\com\simas\mobile\controllersV2\UserRegistrationControllerV2.java: done
+D:\workspaceIB\IBAMB\src\com\simas\mobile\util\SmsManager.java:
+
+
+[16:51:12] Lieanto  Sofian : dimas ini ada issue yang lain  @Lieanto/ Landy, this is regarding the limit viewing issue u faced in IB.
+That was due to the non currency limits defined over the cards, (usually done on accounts on other implementation) where the currency value is expected from wsdl spec but no actual values generated.
+
+Now this is fixed and deployed, however you may need to regenerated the client code at IB as one parameter is made optional in the wsdl spec. Please get the updated wsdl from below and regenerate the client code and test. Both UAT and SIT are updated. 
+
+http://10.20.210.4:7003/gateway/Cms?wsdl
+[16:51:16] Lieanto  Sofian : ini solvingnya
+
+
+6292711000000022 | 128994
+6292710000001295 | 129713
+
+
+
+
+
+
+
+
+
+
+card number
+6292711000001194 | 6292711000001194
+mobile number
+6593373262 | 6581627616
+email
+shinchia@bankamb.com | lim.shihchia@gmail.com
+ID NUMBER
+A500500400 | A500500400
+DOB
+010100 | 010190
+
+
+
+
+===========Deploy APK===============
+https://ionicframework.com/docs/guide/testing.html
+preparation
+-create project |ionic start (namaproject)
+-install npm | npm install -g cordova ionic (didalam project)
+
+1.replace www nya kan
+2.remove pluggin | cordova plugin list | cordova plugin remove org.apache.cordova.media |cordova plugin rm org.apache.cordova.battery-status
+3.tambahin pluggin | cordova plugin add org.apache.cordova.media
+4.remove platform |ionic platform remove (android/ios)
+5.add platform |ionic platform add (android/ios)
+
+Finish
+-run android |ionic run android (aplikasi sudah terinstal di hp)
+atau
+-build android | ionic build android (jadi apk)
+
+
+Catatan :
+1.Harus gunakan koneksi internet sendiri (karena ada beberapa yg diblok)
+2.usahakan pluggin dari fedri (menghindari ada pluggin yg ga compatible)
+
+======================================
+
+
+
+
+date format soap
+<v1:dateFrom>2017-04-03T00:00:00</v1:dateFrom>
+<v1:dateTo>2017-04-03T23:59:00</v1:dateTo>
+
+
+
+
+
+Card_number
+6292711000001178
+Mobile_number
+6593373262
+email
+shihchia@bankamb.com
+ID KTP
+C700-101
+BirthDate
+010100
+
+
+======Contoh download PDF==========
+di HistoryProcessControllerV2.java
+method nya accountDownloadBillingStatementCreditCard
+itu di sisi server buat download pdf
+
+contoh di simobiPlus
+di sisi client nya di controlleres.account.js, controller nya ccBillingStatementedInputCtrl
+pake window.open(ipaddress+’/rest/xxxxx’)
+
+25d55ad283aa400af464c76d713c07ad
+77331
+ba786c470156cfb3b713d8aaeba50bc1
+
+
+
+status
+1250	dormant
+88		active
+
+newUser.setStatus(StatusBO.getInstance().findbyTypeandCode("user", "active"));
+
+
+
+tambah afterLogin_changePassExp  ==>mobile tak perlu
+app.tamplate ==>done
+cntrol.template ==>done
+login ==>done
+logout ==>done
+message_en ==>done
+message_in ==>done
+changePassword.html ==>done
+tambah changePasswordExpired.html ==>done
+tambah changePasswordExpiredResult.html ==>done
+
+MessageResources
+MessageResources_in
+bo-BO
+boV2
+loginController
+userRegistration
+
+http://10.49.42.245:7003/gateway/Cms?wsdl
+http://10.49.42.245:7003/epin/Epin?wsdl

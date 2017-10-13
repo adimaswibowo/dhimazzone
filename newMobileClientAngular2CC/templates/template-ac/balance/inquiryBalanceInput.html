@@ -1,0 +1,42 @@
+<ion-view cache-view="false" view-title="{{'acc_balance' | translate}}">
+	<ion-content class="simobi-background-content">
+			<div ng-controller="inquiryBalanceInputCtrlCC"  class="list list-inset" >			
+				<!-- <table class="item item-input">		 -->
+
+		<table width="100%">
+	      <tr>
+	        <td style="vertical-align:top;padding-top:0px;">
+	            <ion-item class="item item-text-wrap" ng-repeat="creditCard in creditCardList | filter:query" ng-click="doBalance(creditCard.id, creditCard.accountNumber);" id="{{creditCard.id}}">
+	              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	                   <tr>
+	                     <td class="wrapTD">
+	                        <span class="txtWrap">{{creditCard.label}}</span>
+	                      </td>
+<!-- 	                      <td class="wrapTD" width="10%"> -->
+<!-- 	                        <span class="txtWrap"><button class='button button-icon button-clear ion-chevron-right' style='font-size:25px;'></button></span> -->
+<!-- 	                      </td> -->
+	                   </tr>
+	              </table>
+	            </ion-item>
+	        </td>
+	      </tr>
+	    </table>
+
+	
+		          	<div ng-show="hiddenInputBillpay == 'true'"> 
+		            	<input ng-model='accountNumberSelect' type='text' style="visibility: hidden;" name='accountNumberHidden' id	='accountNumberHidden'/>
+		          	</div>		
+
+					<!-- <tr>
+						<td>
+							<input type="button" class="button button-small button-assertive" name="submitBalance" id="submitBalance" value="Submit" ng-click="goToStatement()" />
+						</td>
+					</tr>
+					<tr> -->
+						<!-- <td></td>
+					</tr> -->
+				<!-- </table> -->
+			</div>
+			<div class="footer-space"/>
+	</ion-content>
+</ion-view>

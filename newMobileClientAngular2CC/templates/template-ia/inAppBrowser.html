@@ -1,0 +1,10 @@
+<ion-view cache-view="false" title="">
+  <!-- <ion-content scroll="true" ng-controller="InAppBrowserCtrl"> -->
+  <ion-content scroll="true"  class="simobi-background-content" id="InAppBrowserCtrl">
+  	<!-- <iframe hidden="true" ng-src="{{trustSrc(urlLang.src)}}" allowfullscreen frameborder="0"></iframe> -->
+    <!-- <iframe width="100%" height="100%" ng-src="{{trustSrc(url.src)}}" allowfullscreen frameborder="0"></iframe> -->
+  	<div style="overflow:auto;-webkit-overflow-scrolling:touch;width:100%; height: 100%;">
+    	<iframe ng-src="{{iframeUrl | trusted}}" id="myframe" style="overflow:auto;-webkit-overflow-scrolling:touch;width:100%; height: 100%;" iframe-onload="iframeLoadedCallBack()"></iframe>
+    </div>
+  </ion-content>
+</ion-view>

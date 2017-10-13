@@ -1,0 +1,65 @@
+<ion-view view-title="{{'activation'|translate}}">
+<div class="tabs-striped tabs-top tabs-background-lightgrey tabs-color-light">
+    <div class="tabs">
+
+      <div ng-class="{'simobi-tab-left-active': activateSimobiPlus, 'simobi-tab-left-inactive': !activateSimobiPlus}" type="submit" ng-click="activateSimobiPlusInput();" ><p>{{'activate_simobiplus'|translate}}</p></div>
+
+      <div ng-class="{'simobi-tab-right-active': activateViaAtm, 'simobi-tab-right-inactive': !activateViaAtm}" type="submit" ng-click="activateViaAtmInput();" ><p>{{'activate_atm'|translate}}</p></div>
+
+    </div>
+  </div>
+
+<!--   <div class="tabs-striped tabs-color-assertive"> -->
+<!--     <div class="tabs"> -->
+<!--       <a class="tab-item" href="#" ng-click="backToBillpay();">  -->
+<!--         <i class="icon-left ion-chevron-left button-dark"></i> -->
+<!--        	Back -->
+<!--       </a> -->
+<!--       <a class="tab-item" href="#" ng-click="backToIndex();"> -->
+<!--         <i class="icon ion-home"></i> -->
+<!--         Home -->
+<!--       </a> -->
+<!--     </div> -->
+<!--   </div> -->
+	<ion-content class="simobi-background-content">
+		<br><br><br>
+		<div class="list list-inset">
+          <label class="item item-input">
+          
+	         <input type="text" ng-if="activateViaAtm == 'true'" ng-model="loginData.username" placeholder="{{'enter_activation_code'|translate}}">
+	         <input type="text" ng-if="activateSimobiPlus == 'true'" ng-model="loginData.username" placeholder="{{'enter_username'|translate}}">
+          </label>
+          <label class="item item-input">
+	         <input type="password" ng-if="activateViaAtm == 'true'" ng-model="loginData.password" placeholder="{{'enter_pin'|translate}}">
+	         <input type="password" ng-if="activateSimobiPlus == 'true'" ng-model="loginData.password" placeholder="{{'enter_password'|translate}}">
+          </label>
+	      </div>
+		  <div class="list list-inset-simobi" ng-click="doLoginActivation()">
+	        <button class="button button-block button-positive" type="submit">Log in</button>
+		  </div>
+	
+	
+<!-- 		<br><br><br><br> -->
+<!-- 		<div class="view-container" align="center"> -->
+<!-- 			<div align="center" id="billpayOption" ng-show="activateSimobiPlus == 'true'"> -->
+<!-- 				<table border="0" cellspacing="0" > -->
+<!-- 					<tr> -->
+<!-- 						<td align="left"> -->
+<!-- 							Activate SimobiPlus -->
+<!-- 						</td> -->
+<!-- 					</tr>   -->
+<!-- 				</table> -->
+<!-- 			</div> -->
+	
+<!-- 			<div align="center" id="billpayOption" ng-show="activateViaAtm == 'true'"> -->
+<!-- 				<table border="0" cellspacing="0" > -->
+<!-- 					<tr> -->
+<!-- 						<td align="left"> -->
+<!-- 							Activate Via ATM -->
+<!-- 						</td> -->
+<!-- 					</tr>   -->
+<!-- 				</table> -->
+<!-- 			</div> -->
+	<div class="footer-space"/>
+	</ion-content>	
+</ion-view>

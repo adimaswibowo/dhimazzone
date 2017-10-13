@@ -1,0 +1,20 @@
+<ion-view cache-view="false" view-title="International Transaction Confirm">
+  <ion-content class="simobi-background-content">
+  
+	<div class="list list-inset">
+		<label class="item">
+			International Transaction: {{intl}} <br>
+			E-Commerce: {{ecommerce}} <br>
+			Cash Advance: {{cashAdvance}}
+		</label>
+	</div>
+	
+	<div id='securityTypeTokenInput' class='securityType-TokenInput'></div>
+	
+	<button class="button button-block button-positive" ng-click="doRequestIntlTrx();">
+	  	Confirm
+	</button>
+	
+	<div class="footer-space"/>
+  </ion-content>
+</ion-view>

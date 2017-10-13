@@ -1,0 +1,97 @@
+<ion-view cache-view="false" view-title="{{'external_transfer_list'|translate}}">
+	<ion-content class="simobi-background-content">
+		<div class="list list-inset">
+		  <label class="item item-input">
+		    <input type="text" id="targetAccount" name="targetAccount" maxlength="20" size="20" placeholder="{{'target_account' |translate}}" ng-model="addExternalTL.targetAccount"/>
+		  </label>
+		  <label class="item item-input">
+		  	<i class="icon ion-search placeholder-icon"></i>
+		    <div add-external-bank-transfer-list-input-directive type="bankName"></div>
+			<input type='text' name='bankNameHidden' id='bankNameHidden' style="visibility: hidden;" ng-model="addExternalTL.bankNameHidden"/>
+		  </label>
+		  
+		  <label class="item item-radio">
+		    <input type="radio" name="transferMethod" value="sknTransfer" id="sknRb">
+		    <div class="item-content">
+		      SKN
+		    </div>
+		    <i class="radio-icon ion-checkmark"></i>
+		  </label>
+		  <label class="item item-radio">
+		    <input type="radio" name="transferMethod" value="rtgsTransfer" id="rtgsRb">
+		    <div class="item-content">
+		      RTGS
+		    </div>
+		    <i class="radio-icon ion-checkmark"></i>
+		  </label>
+		  <label class="item item-radio">
+		    <input type="radio" name="transferMethod" value="networkTransfer" id="networkRb">
+		    <div class="item-content">
+		      Network
+		    </div>
+		    <i class="radio-icon ion-checkmark"></i>
+		  </label>
+		  
+		  <label class="item item-input" id="targetAccountHolderName">
+		    <input type="text" id="targetAccountName" name="targetAccountName" maxlength="30" size="20" placeholder="{{'target_account_name' |translate}}" ng-model="addExternalTL.targetAccountName"/>
+		  </label>
+		  <label class="item item-input">
+		  	<input type='text' name='description' id='description' placeholder="{{'transaction_description' |translate}}" size="45" ng-model="addExternalTL.description" maxlength="20"/>
+		    <!--div add-external-bank-transfer-list-input-directive type="description"></div-->
+		  </label>
+		  <button class="button button-block button-positive" ng-click="doAddExternalBankTransferListConfirm();" >
+		  	Add
+		  </button>
+		</div>
+		
+		
+		
+		<div>
+<!-- 			<table border="0"> -->
+<!-- 				<tr> -->
+<!-- 					<td> -->
+<!-- 						<input type="text" id="targetAccount" name="targetAccount" maxlength="20" size="20" placeholder="Target Account Number" /> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 					<td> -->
+<!-- 						<div add-external-bank-transfer-list-input-directive type="bankName"></div> -->
+<!-- 						<input ng-model='bankName' type='text' name='bankNameHidden' id='bankNameHidden' style="visibility: hidden;"/> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 		            <td> -->
+<!-- 						<input type="radio" name="transferMethod" value="sknTransfer" id="sknRb">SKN &nbsp;&nbsp; -->
+<!-- 						<input type="radio" name="transferMethod" value="rtgsTransfer" id="rtgsRb">RTGS &nbsp;&nbsp; -->
+<!-- 						<input type="radio" name="transferMethod" value="networkTransfer" id="networkRb">Network &nbsp;&nbsp; -->
+<!-- 		            </td> -->
+<!-- 		        </tr> -->
+<!-- 				<tr id="targetAccountHolderName"> -->
+<!-- 					<td> -->
+<!-- 						<input type="text" id="targetAccountName" name="targetAccountName" maxlength="30" size="20" placeholder="Target Account Name"/> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 					<td> -->
+<!-- 						<div add-external-bank-transfer-list-input-directive type="description"></div> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 					<td> -->
+<!-- 						<br> -->
+<!-- 						<input type="button" name="button" id="button" value="Add" ng-click="doAddExternalBankTransferListConfirm();"/> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 			</table> -->
+				
+			<table border="0">	
+				<tr>
+		            <td>
+		            	<div id ="dinamicValue"></div>
+		            </td>
+		        </tr>
+			</table>
+		</div>
+		<div class="footer-space"/>
+	</ion-content>
+</ion-view>

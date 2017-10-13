@@ -1,0 +1,19 @@
+<ion-view view-title="Validation SMS and Email Token">
+  <ion-content class="simobi-background-content">
+  	<div class="list list-inset">
+  	  <label class="item item-input">
+	    <input type="tel" name="smsToken" id="smsToken" maxlength="6" placeholder="SMS Token"/>
+	  </label>
+	  <label class="item item-input">
+	    <input type="text" name="emailToken" id="emailToken" maxlength="255" placeholder="Email Token"/>
+	  </label>
+	  <button class="button button-small button-assertive" ng-click="doResendSms()">
+	  	Resend SMS
+	  </button>
+  	  <button class="button button-block button-positive" ng-click="doValidateToken()">
+	  	Submit
+	  </button>
+  	</div>
+  	<div class="footer-space"/>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,78 @@
+<ion-view cache-view="false" view-title="{{'ccBlockingInput' | translate}}">
+  <ion-content class="simobi-background-content">
+  
+<!-- 	<div class="list list-inset" id="transferInput"> -->
+<!-- 		<label class="item item-input"> -->
+<!-- 			<i class="icon ion-search placeholder-icon"></i> -->
+<!-- 		  	<input type='text' name='ccNumberText' id='ccNumberText' ng-click="dropdownBlockPage('angularCcList');" placeholder="{{'search_account' |translate}}" size="45" ng-model="ccNumberText"/> -->
+<!-- 		</label> -->
+<!-- 	</div> -->
+	
+	<div class="list list-inset">
+		<table width="100%">
+	      <tr>
+	        <td style="vertical-align:top;padding-top:0px;">
+	            <ion-item class="item item-text-wrap" ng-repeat="creditCard in creditCardList | filter:query" ng-click="doCcBlockingConfirm(creditCard.id,creditCard.accountNumber);" id="{{creditCard.id}}">
+	              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	                   <tr>
+	                     <td class="wrapTD">
+	                        <span class="txtWrap">{{creditCard.label}}</span>
+	                      </td>
+<!-- 	                      <td class="wrapTD" width="10%"> -->
+<!-- 	                        <span class="txtWrap"><button class='button button-icon button-clear ion-chevron-right' style='font-size:25px;'></button></span> -->
+<!-- 	                      </td> -->
+	                   </tr>
+	              </table>
+	            </ion-item>
+	        </td>
+	      </tr>
+	    </table>
+	</div>
+	
+	
+	
+<!-- 	<div id="listCcId" class="list list-inset"> -->
+<!-- 		<table width="100%"> -->
+<!-- 			<tr> -->
+<!-- 				<td id="listCcDisplay"> -->
+<!-- 				</td> -->
+<!-- 			</tr> -->
+<!-- 		</table> -->
+<!-- 	</div>	 -->
+	
+<!-- 	<ul class="list"> -->
+<!--         <li class="item item-toggle"> -->
+<!--           <h3>Activate International : {{enable}}</h3> -->
+<!--            <label class="toggle toggle-balanced"> -->
+<!--              <input type="checkbox" id="internationalization" name="internationalization" ng-click="enableIntl();"> -->
+<!--              <div class="track"> -->
+<!--                <div class="handle"></div> -->
+<!--              </div> -->
+<!--            </label> -->
+<!--         </li> -->
+<!--     </ul> -->
+	
+<!-- 	<label class="item item-checkbox item-text-wrap"> -->
+<!-- 	  	<label class="checkbox"> -->
+<!-- 	      <input type="checkbox" id="doAgreeClick" name="doAgreeClick"/> -->
+<!-- 	    </label> -->
+<!-- 	    Kirim ke email: {{email}} -->
+<!-- 	</label> -->
+	
+<!-- 	<button class="button button-block button-positive" ng-click="doCcBlockingConfirm();"> -->
+<!-- 	  	Submit -->
+<!-- 	</button> -->
+	
+	<div>
+		<table border="0" >
+	        <tr>
+				<td>
+					<input ng-model='ccNumber' type='text' name='ccNumberHidden' id='ccNumberHidden' style="visibility: hidden;"/>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="footer-space"/>
+  </ion-content>
+</ion-view>

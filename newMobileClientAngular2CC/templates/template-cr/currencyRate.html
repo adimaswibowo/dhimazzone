@@ -1,0 +1,120 @@
+<ion-view cache-view="false" view-title="{{'currencyRate'|translate}}">
+	<!-- <div class="tabs-striped tabs-top tabs-background-assertive tabs-color-light">
+	   <div class="tabs">
+	     <a class="tab-item" ng-class="{'active font-simobi-activation-active': tabCurrencyRate, 'inactive font-simobi-activation-inactive': !tabCurrencyRate}" href="#" ng-click="tabCurrencyRateInput();">
+	       <p>{{'currencyRate'|translate}}</p>
+	     </a>
+	     <a class="tab-item" ng-class="{'active font-simobi-activation-active': tabConverterCurrRate, 'inactive font-simobi-activation-inactive': !tabConverterCurrRate}" href="#" ng-click="tabConverterCurrRateInput();">
+	       <p>{{'currencyConverter'|translate}}</p>
+	     </a>
+	   </div>
+	</div> -->
+
+	<div class="tabs-striped tabs-top tabs-background-lightgrey tabs-color-light">
+	    <div class="tabs">
+
+	      <div ng-class="{'simobi-tab-left-active': tabCurrencyRate, 'simobi-tab-left-inactive': !tabCurrencyRate}" type="submit" ng-click="tabCurrencyRateInput();" ><p>{{'currencyRate'|translate}}</p></div>
+
+	      <div ng-class="{'simobi-tab-right-active': tabConverterCurrRate, 'simobi-tab-right-inactive': !tabConverterCurrRate}" type="submit" ng-click="tabConverterCurrRateInput();" ><p>{{'currencyConverter'|translate}}</p></div>
+
+	    </div>
+	</div>
+	<ion-content>
+		<br><br><br>
+		<hr class='lineHR_red'>
+		<div ng-if="tabCurrencyRate == 'true'">
+			<table  width="100%" class="m_content-index" style="padding:10px;">
+<!-- 			  <b>{{'currencyRate'|translate}}</b> -->
+			  <br>
+			  <tbody  style="border: 2px solid #ccc; background-color: #33FFFF;" width="100%"><tr><td><b>Currency</b></td><td><b>Buy</b></td><td><b>Sell</b></td></tr></tbody>
+			  <tbody ng:repeat="i in curr.myCurrencyListObjectList" ng-class="{even: !($index%2), odd: ($index%2)}" style="border: 2px solid #ccc;" width="100%">
+			    <tr><td>{{i.currency}}</td><td>{{i.buyRate}}</td><td>{{i.sellRate}}</td></tr>
+			  </tbody>
+			</table>
+			<br>
+			<div class="list">
+			  <label class="item item-input item-select">
+			    <div class="input-label">
+			      Convert :
+			    </div>
+				<!-- <select name="convertCurrency" id="convertCurrency">
+				  <option value="IDR">IDR</option>
+			      <option ng-repeat="option in currencyRateList" value="{{option.currency}}" >
+			      	{{option.currency}}
+			      </option>
+			    </select> -->
+			    <input type="text" name="convertCurrency" id="convertCurrency" ng-click="dropdownBlockPageCurrency();" placeholder="{{'select_currency' |translate}}" size="45" value="IDR"/>
+			    
+			  </label>
+			  <label class="item item-input">
+			    <input type="text" id="amount" placeholder="Input Amount">
+			  </label>
+			  <label class="item item-input item-select">
+			    <div class="input-label">
+			      Into :
+			    </div>
+				<!-- <select name="intoCurrency" id="intoCurrency">
+				  <option value="IDR">IDR</option>
+			      <option ng-repeat="option in currencyRateList" value="{{option.currency}}" >
+			      	{{option.currency}}
+			      </option>
+			    </select> -->
+			    <input type="text" name="intoCurrency" id="intoCurrency" ng-click="dropdownBlockPageCurrencyInto();" placeholder="{{'select_currency' |translate}}" size="45" value="IDR"/>
+			    
+			  </label>
+	  		  <label class="item item-input">	
+	  			Total :&nbsp;<div ng-bind-html="total"></div>		    
+	  		  </label>
+			  </div>
+			  <br>
+			  <button class="button button-small button-assertive ion-loop" style='font-size:25px;' ng-click="swapCurrency();">
+			  </button>
+			  <input type="button" class="button button-block button-positive" ng-click="convertCurrency()" value="Convert">
+			  <input type="button" class="button button-block button-positive" ng-click="doTransfer()" value="Do Transfer">
+			</div>
+		</div>
+		<div ng-if="tabConverterCurrRate == 'true'">
+			<div class="list">
+			  <label class="item item-input item-select">
+			    <div class="input-label">
+			      Convert :
+			    </div>
+				<!-- <select name="convertCurrency" id="convertCurrency">
+				  <option value="IDR">IDR</option>
+			      <option ng-repeat="option in currencyRateList" value="{{option.currency}}" >
+			      	{{option.currency}}
+			      </option>
+			    </select> -->
+			    <input type="text" name="convertCurrency" id="convertCurrency" ng-click="dropdownBlockPageCurrency();" placeholder="{{'select_currency' |translate}}" size="45" value="IDR"/>
+			    
+			  </label>
+			  <label class="item item-input">
+			    <input type="text" id="amount" placeholder="Input Amount">
+			  </label>
+			  <label class="item item-input item-select">
+			    <div class="input-label">
+			      Into :
+			    </div>
+				<!-- <select name="intoCurrency" id="intoCurrency">
+				  <option value="IDR">IDR</option>
+			      <option ng-repeat="option in currencyRateList" value="{{option.currency}}" >
+			      	{{option.currency}}
+			      </option>
+			    </select> -->
+			    <input type="text" name="intoCurrency" id="intoCurrency" ng-click="dropdownBlockPageCurrencyInto();" placeholder="{{'select_currency' |translate}}" size="45" value="IDR"/>
+			    
+			  </label>
+			  <label class="item item-input">
+<!-- 			    <input type="text" placeholder="Total"> -->
+			    Total :&nbsp;<div ng-bind-html="total"></div>
+			  </label>
+			  <br>
+			  <button class="button button-small button-assertive ion-loop" style='font-size:25px;' ng-click="swapCurrency();">
+			  </button>
+			  <input type="button" class="button button-block button-positive" ng-click="convertCurrency()" value="Convert">
+			  <input type="button" class="button button-block button-positive" ng-click="doTransfer()" value="Do Transfer">
+			</div>
+		</div>
+		<div class="footer-space"/>
+	</ion-content>	
+</ion-view>

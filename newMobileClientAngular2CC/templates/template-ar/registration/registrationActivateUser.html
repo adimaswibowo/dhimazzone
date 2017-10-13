@@ -1,0 +1,19 @@
+<ion-view view-title="Activation">
+  <ion-content class="simobi-background-content">
+  	<div class="list list-inset">
+	  <label class="item item-input">
+	    <input ng-disabled="isAlreadyExist" ng-model="username" type="text" name="username" id="username" maxlength="50" placeholder="Username"/>
+	  </label>
+	  <label class="item item-input">
+	    <input type="password" name="password" id="password" maxlength="50" placeholder="Password"/>
+	  </label>
+	  <label class="item item-input">
+	    <input type="password" name="passwordConfirm" id="passwordConfirm" maxlength="50" placeholder="Password Confirmation"/>
+	  </label>
+  	  <button class="button button-block button-positive" ng-click="doActivateUser()">
+	  	Submit
+	  </button>
+  	</div>
+  	<div class="footer-space"/>
+  </ion-content>
+</ion-view>

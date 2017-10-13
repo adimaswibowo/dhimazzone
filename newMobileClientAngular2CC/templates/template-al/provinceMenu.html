@@ -1,0 +1,22 @@
+<ion-view view-title="{{'atmLocator'|translate}}">
+	<ion-content class="simobi-background-content">
+		<form>
+				<div ng-controller="showProvinceCtrl">
+					<ion-item class="button-assertive">
+								<div><b>{{'province_list'|translate}} :</b></div>
+					</ion-item>
+					<ion-item class="button-assertive" ng-repeat="showATMLocatorMenuModel in showATMLocatorMenu | unique: 'nameOption'" ng-click="dinamicMenu({{showATMLocatorMenuModel}});">
+						 {{showATMLocatorMenuModel.nameOption}}
+					</ion-item>
+					
+					<!--<span ng:repeat="(index, value) in defaultMenuJson | inArray:filterBy:'lvlMenu'" ng-click="dinamicMenu({{defaultMenuJsonModel}});">
+						<img src="theme-default/images/{{value.icon}}" /> {{value.name}}<br ng:show="(index+1)%2==0" />
+					</span>-->
+				</div>
+		</form>
+		<div class="footer-space"/>
+	</ion-content>
+</ion-view>
+
+
+

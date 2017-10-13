@@ -1,0 +1,18 @@
+<ion-view cache-view="false" view-title="{{'ccResetPinCountConfirm' | translate}}">
+  <ion-content class="simobi-background-content">
+  
+	<div class="list list-inset">
+		<label class="item">	
+		{{'ccResetPinCountConfirmMessage' | translate}}
+		</label>
+	</div>
+	
+	<div id='securityTypeTokenInput' class='securityType-TokenInput'></div>
+	
+	<button class="button button-block button-positive" ng-click="doResetPinCountRequest();">
+	  	Confirm
+	</button>
+	<input type="hidden" name="transRefNum" id="transRefNum">
+	<div class="footer-space"/>
+  </ion-content>
+</ion-view>

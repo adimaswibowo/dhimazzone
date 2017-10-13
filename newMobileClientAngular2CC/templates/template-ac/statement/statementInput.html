@@ -1,0 +1,87 @@
+<ion-view cache-view="false" view-title="{{'ccSelectCardStatement'|translate}}">
+	<ion-content class="simobi-background-content">
+		<form >	
+			<div ng-controller="statementInputCtrlCC"  class="list list-inset">
+				<table class="item item-input">
+
+
+		          	<div ng-show="hiddenInputBillpay == 'true'"> 
+		            	<input ng-model='accountNumberSelect' type='text' style="visibility: hidden;" name='accountNumberHidden' id	='accountNumberHidden'/>
+		          	</div>		
+
+			       </br>
+			       	<div style="color: #333333; padding-left: 5px; font-family:Kalinga; font-size:15px;font-weight: bold;">
+						{{'accountStatement_period'|translate}}
+					 </div>
+				  <label class="item item-radio">
+				    <input type="radio" name="period" value="today" id="today"  ng-click="periodToday();">
+				    <div class="item-content">
+					{{'accountStatement_today'|translate}}
+				    </div>
+				    <i class="radio-icon ion-checkmark"></i>
+				  </label>
+				  <label class="item item-radio">
+				    <input type="radio" name="period" value="curMonth" id="curMonth" ng-click="periodCurMonth();">
+				    <div class="item-content">
+					{{'accountStatement_curMonth'|translate}}
+				    </div>
+				    <i class="radio-icon ion-checkmark"></i>
+				  </label>
+				  <label class="item item-radio">
+				    <input type="radio" name="period" value="1MonthAgo" id="1MonthAgo" ng-click="period1MonthAgo();">
+				    <div class="item-content">
+					{{'accountStatement_oneMonthAgo'|translate}}
+				    </div>
+				    <i class="radio-icon ion-checkmark"></i>
+				  </label>
+				  <label class="item item-radio">
+				    <input type="radio" name="period" value="2MonthAgo" id="2MonthAgo" ng-click="period2MonthAgo();">
+				    <div class="item-content">
+					{{'accountStatement_twoMonthAgo'|translate}}
+				    </div>
+				    <i class="radio-icon ion-checkmark"></i>
+				  </label>		
+				  <label class="item item-radio">
+				    <input type="radio" name="period" value="3MonthAgo" id="3MonthAgo" ng-click="period3MonthAgo();">
+				    <div class="item-content">
+					{{'accountStatement_threeMonthAgo' | translate}}
+				    </div>
+				    <i class="radio-icon ion-checkmark"></i>
+				  </label>
+				  <label class="item item-radio">
+				    <input type="radio" name="period" value="range" id="range" ng-click="periodRange();">
+				    <div class="item-content">
+					{{'accountStatement_range' | translate}}
+				    </div>
+				    <i class="radio-icon ion-checkmark"></i>
+				  </label>
+					<tr id="loadFromDate">
+					</tr>
+					<tr id="loadToDate">
+					</tr>
+					<tr>
+						<td>
+							<br>
+							<input class="button button-small button-assertive"  type="button" name="button" id="button" value="Submit" ng-click="doAccountStatementResult();" />
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+					<tr>
+			            <td id ="dinamicValue">
+			            </td>
+			        </tr>
+					<tr>
+						<td>
+							<hr>
+							<br><label>Note:</label><br/>
+							<br><label>1. Account statement Data available for the 31 days.</label><br/>
+						</td>
+					</tr>
+				</table>
+			</div>	
+		</form>
+		<div class="footer-space"/>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,34 @@
+<ion-view cache-view="false" view-title="{{'ccActivationResult'|translate}}">
+  <ion-content class="simobi-background-content">
+  	
+  	<div id="ccResultDisplayId" class="list list-inset">
+		<table width="100%">
+			<tr>
+				<td id="ccResultDisplay">
+				</td>
+			</tr>
+		</table>
+	</div>	
+
+<!--   	<div class="list list-inset">
+		<table width="100%" class="txtWrapNew20">
+			<tr >
+				<td> {{result}}
+				</td>
+			</tr>
+		</table>
+	</div>	 -->
+
+<div class="list list-inset" id="transferInput">
+	<label class="item">
+	    {{result}}
+	</label>
+</div>
+	
+	<button class="button button-block button-positive" ng-click="doBack();">
+	  	Back
+	</button>
+	
+	<div class="footer-space"/>
+  </ion-content>
+</ion-view>

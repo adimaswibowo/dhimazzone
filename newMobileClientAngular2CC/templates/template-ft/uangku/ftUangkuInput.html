@@ -1,0 +1,177 @@
+<ion-view cache-view="false" view-title="{{'ftUangkuInput'|translate}}">
+  <ion-content class="simobi-background-content">
+<!-- 	<div ng-controller="ftInbankInputCtrl"> -->
+	<div class="list list-inset" id="transferInput">
+	  <label class="item item-input">
+	  	<i class="icon ion-search placeholder-icon"></i>
+	  	<input type='text' name='accountNumberText' id='accountNumberText' ng-click="dropdownBlockPage('angularAccountList');" placeholder="{{'search_account' |translate}}" size="45" ng-model="accountNumberText"/>
+<!-- 	    <div ft-inbank-input-directive type="accountNumber"></div> -->
+	  </label>
+
+
+<!--  Febry: FT Recurring & Future Date  -->
+<!-- 	 <label class="item item-radio"> -->
+<!-- 	    <input type="radio" name="transactionDate" value="1" id="transactionDate" ng-model="entry.transactionDate"> -->
+<!-- 	    <div class="item-content"> -->
+<!-- 	    {{'ftImmediate_transfer'|translate}} -->
+<!-- 	    </div> -->
+<!-- 	    <i class="radio-icon ion-checkmark"></i> -->
+<!-- 	  </label> -->
+<!-- 	  <label class="item item-radio"> -->
+<!-- 	    <input type="radio" name="transactionDate" value="0" id="transactionDate"  ng-model="entry.transactionDate"> -->
+<!-- 	    <div class="item-content"> -->
+<!-- 	    {{'ftFutureDated_transfer'|translate}} -->
+<!-- 	    </div> -->
+<!-- 	    <i class="radio-icon ion-checkmark"></i> -->
+<!-- 	  </label> -->
+<!-- 	  <div class="row" style="background:#E6E0E0" ng-show="entry.transactionDate=='0'"> -->
+<!-- 		  		<div class="col"> -->
+<!-- 		       		<label>	{{'ftTransfer_date' |translate}} : </label> -->
+<!-- 	  			</div> -->
+<!-- 	  			<div class="col col-50">	 -->
+<!-- 	  				 <label class="item item-input-simobi"> -->
+<!-- 				      	<input type="date" name="transDate" id="transDate" placeholder="{{'ftTransfer_date' |translate}}"  /> -->
+<!-- 				     </label> -->
+<!-- 	  			</div> -->
+<!-- 	  </div> -->
+<!-- 	  <label class="item item-radio"> -->
+<!-- 	    <input type="radio" name="transactionDate" value="2" id="transactionDate"  ng-model="entry.transactionDate"> -->
+<!-- 	    <div class="item-content"> -->
+<!-- 	    {{'ftRecuring'|translate}} -->
+<!-- 	    </div> -->
+<!-- 	    <i class="radio-icon ion-checkmark"></i> -->
+<!-- 	  </label> -->
+<!-- 	  <div ng-show="entry.transactionDate=='2'"  style="background:#E6E0E0"> -->
+<!-- 	  		<div class="row"> -->
+<!-- 		  		<div class="col"> -->
+<!-- 		  			<label><input type="radio" name="recFreq" id="recFreq" value="0"  > {{'ftRecuringMonthly'|translate}}</input></label> -->
+<!-- 		  		</div> -->
+<!-- 		  		<div class="col col-50">	 -->
+<!-- 		  			<label class="item item-input"><input type='text'  name='recurringText' id='recurringText' ng-click="dropdownBlockPage('recuringDay');" placeholder="{{'ftRecurringText' |translate}}" size="15" ng-model="recurringText"/></label> -->
+<!-- 		  		</div> -->
+<!-- 		  	</div> -->
+<!-- 		  	<div class="row"> -->
+<!-- 		  		<div class="col"> -->
+<!-- 		  			<label><input type="radio" name="recFreq" id="recFreq" value="1" > {{'ftRecuringPeriod'|translate}}</input> </label> -->
+<!-- 		  		</div> -->
+<!-- 		  		<div class="col col-50">	 -->
+<!-- 		  			<label class="item item-input"><input type='text'  name='recurringInterval' id='recurringInterval' placeholder="{{'ftRecurringDay' |translate}}" size="6" maxlength="3"/></label> -->
+<!-- 		  		</div> -->
+<!-- 		  	</div> -->
+<!-- 		  	<div class="row"> -->
+<!-- 		  		<div class="col"> -->
+<!-- 		  			{{'ftRecuringEndCond'|translate}} -->
+<!-- 		  		</div> -->
+<!-- 		  	</div> -->
+<!-- 		  	<div class="row"> -->
+<!-- 		  		<div class="col"> -->
+<!-- 		  			<label><input type="checkbox" name="isMaxRecurrenceDateChecked" id="isMaxRecurrenceDateChecked" > {{'ftRecuringExpired'|translate}}</input></label> -->
+<!-- 		  		</div> -->
+<!-- 		  		<div class="col col-50">	 -->
+<!-- 		  			<label class="item item-input-simobi"><input type="date"  name="maxRecurrenceDate" id="maxRecurrenceDate" placeholder="{{'ftRecuringExpired_date'|translate}}"  /></label> -->
+<!-- 		  		</div> -->
+<!-- 		  	</div> -->
+<!-- 		  	<div class="row"> -->
+<!-- 		  		<div class="col"> -->
+<!-- 		  			<label><input type="checkbox" name="isMaxRecurrenceChecked" id="isMaxRecurrenceChecked"  > {{'ftMaxRecurrenceChecked'|translate}}</input></label> -->
+<!-- 		  		</div> -->
+<!-- 		  		<div class="col col-50">	 -->
+<!-- 		  			<label class="item item-input"><input type='text' name='maxRecurrence' id='maxRecurrence' placeholder="{{'ftMaxRecurrenceTimes'|translate}}" size="6" maxlength="2"/></label> -->
+<!-- 		  		</div> -->
+<!-- 		  	</div> -->
+<!-- 	  </div> -->
+
+
+
+	  <label class="item item-input">
+	  	<i ng-if="ftInbank.directTransfer == false" class="icon ion-search placeholder-icon"></i>
+	    <input ng-if="ftInbank.directTransfer == false" type='text' name='targetAccountText' id='targetAccountText' ng-click="dropdownBlockPage('angularTargetAccountUangku');" placeholder="{{'search_target_mobileNumber' |translate}}" size="45"/>
+	    <input ng-if="ftInbank.directTransfer == true" ng-model='targetAccount' type='text' name='targetAccountDirectTrf' id='targetAccountDirectTrf' placeholder="{{'input_target_mobileNumber' |translate}}"/>
+	  </label>
+	  
+	  <ul class="list" ng-if="ftInbank.showDirectTransferMode == 'yes'">
+        <li class="item item-toggle">
+          <h3>Direct Transfer Mode</h3>
+           <label class="toggle toggle-balanced">
+             <input type="checkbox" id="saveToBillPaymentList" name="saveToBillPaymentList" ng-click="ftInbank.directTransfer = !ftInbank.directTransfer">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+           </label>
+        </li>
+      </ul>
+
+
+	  <!-- <label class="item item-input">
+	         <span on-tap="directTransfer = !directTransfer"><h3>Direct Transfer Mode</h3></span>
+	         <i id="directTransfer" ng-class="{'text-wrap button button-assertive button-clear ion-help-circled icon-simobi-ionic': !directTransfer, 'text-wrap button button-balanced button-clear ion-checkmark-circled icon-simobi-ionic': directTransfer}" on-tap="directTransfer = !directTransfer" ></i>
+      </label>  -->
+
+	  <button class="button button-small button-assertive" ng-click="doAddUangkuTransferList();">
+<!-- 	  	<input type="button" name="buttonAddInbankTargetAccount" id="buttonAddInbankTargetAccount" value="Add New" ng-click="doAddInbankTransferList();" /> -->
+	  	{{'add_new_target_account' |translate}}
+	  </button>
+
+
+	  <div class="row">
+	  	<div class="col">
+		  <label class="item item-input item-select" style="height: 45px;">
+	<!-- 	  	<div class="input-label"> -->
+	<!-- 	    </div> -->
+		  <!--   <select name="currency" id="currency">
+<!-- 		    	<option>{{'select_currency' |translate}}</option> -->
+<!-- 		    	<option>IDR</option> -->
+<!-- 	        </select> -->
+	        <input ng-if="isCurrencyRateData == false" type="text" name="currency" id="currency" ng-click="dropdownBlockPageCurrency();" placeholder="{{'select_currency' |translate}}" size="45" ng-model="currency" ng-init="currency='IDR'"/>
+		    <input ng-if="isCurrencyRateData == true" type="text" name="currency" id="currency" ng-click="dropdownBlockPageCurrency();" placeholder="{{'select_currency' |translate}}" size="45" ng-model="currency"/>
+		  </label>
+		</div>
+
+	  	<div class="col col-67">
+		  <label class="item item-input">
+			 <div ft-inbank-input-directive type="amount"></div>
+		  </label>
+		</div>
+
+	  </div>
+
+
+	  <label class="item item-input">
+	    <div ft-inbank-input-directive type="description"></div>
+	  </label>
+
+
+	  <label class="td-label-left">
+	       		<p class="m_content-caption">{{'note_discription' |translate}}</p>	  	
+	  </label>
+
+
+	  <button class="button button-block button-positive" ng-click="checkSecurityTypeAssigner();">
+	  	Confirm
+	  </button>
+
+
+	  <br>
+	</div>
+	
+	<div>
+		<table border="0" >
+		
+	        <tr>
+				<td>
+					<input ng-model='accountNumber' type='text' name='accountNumberHidden' id='accountNumberHidden' style="visibility: hidden;"/>
+					<input ng-model='targetAccount' type='text' name='targetAccountHidden' id='targetAccountHidden' style="visibility: hidden;"/>
+					<input ng-model='targetAccount' type='text' name='recurringHidden' id='recurringHidden' style="visibility: hidden;"/>
+					<input type="button" name="buttonConfirm" id="buttonConfirm" ng-click="doFtInbankConfirm();" style="visibility: hidden;"/>
+					<input ng-model='uangkuFlag' type='text' value="uangku" name='uangkuFlagHidden' id='uangkuFlagHidden' style="visibility: hidden;"/>
+				</td>
+			</tr>
+			<tr>
+	            <td id ="dinamicValue">
+	            </td>
+	        </tr>
+		</table>
+	</div>
+	<div class="footer-space"/>
+  </ion-content>
+</ion-view>

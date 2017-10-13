@@ -1,0 +1,18 @@
+<ion-view cache-view="false" view-title="{{'ccActivationConfirm'|translate}}">
+  <ion-content class="simobi-background-content">
+  
+	<div class="list list-inset">
+		<label class="item">
+			{{'ccActivationConfirmMessage1'|translate}} {{cardMask}} {{'ccActivationConfirmMessage2'|translate}}
+		</label>
+	</div>
+	
+	<div id='securityTypeTokenInput' class='securityType-TokenInput'></div>
+	
+	<button class="button button-block button-positive" ng-click="doActivationRequest();">
+	  	Confirm
+	</button>
+	<input type="hidden" name="transRefNum" id="transRefNum">
+	<div class="footer-space"/>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,51 @@
+<ion-view view-title="{{'registration'|translate}}">
+  <ion-content class="simobi-background-content">
+  	<div class="list list-inset">
+  	  <label class="item item-input">
+	    <input type="tel" name="cardNumber" id="cardNumber" maxlength="18" placeholder="{{'card_number'|translate}}"/>
+	  </label>
+<!--  <label class="item item-input">
+	    <input type="tel" name="accountNumber" id="accountNumber" maxlength="50" placeholder="{{'account_number'|translate}}"/>
+	  </label> -->
+	  <label class="item item-input">
+	    <input type="tel" name="phoneNumber" id="phoneNumber" maxlength="18" placeholder="{{'mobile_number'|translate}}"/>
+	  </label>
+	  <label class="item item-input">
+	    <input type="text" name="email" id="email" maxlength="45" placeholder="{{'Email'|translate}}"/>
+	  </label>
+	  <label class="item item-input">
+	    <input type="text" name="idKtp" id="idKtp" maxlength="18" placeholder="{{'ktp_id'|translate}}"/>
+	  </label>
+	  <label class="item item-input">
+	    <input type="tel" name="dateOfBirth" id="dateOfBirth" maxlength="6" placeholder="{{'birthdate'|translate}}"/>
+	  </label>
+	  <label class="item item-input">
+	  	<img id="captchaImg" align="middle" alt="Ketik karakter yang muncul pada gambar" border="1" /> 
+	  </label>
+	  <label class="item item-input">
+        <input type="text" id="captchaInput" name="captchaInput" maxlength="16" size="16" placeholder="{{'input_captcha'|translate}}"/>
+        <br>
+      </label>
+      <button class="button button-small button-assertive" ng-click="reloadCaptcha();">
+      	{{'refresh_captcha'|translate}}
+      </button>
+<!--       <label class="item item-input"> -->
+<!--         <label data-i18n="registration.noteContent1" class="m_content-note" /> -->
+<!--         <br> -->
+<!--         <input type="checkbox" id="doAgreeClick" name="doAgreeClick"/> &nbsp; -->
+<!--         <label data-i18n="registration.noteContent2" class="m_content-note" /> -->
+<!-- 	  </label> -->
+	  <label class="item item-checkbox item-text-wrap">
+	  	<label class="checkbox">
+	      <input type="checkbox" id="doAgreeClick" name="doAgreeClick"/>
+	    </label>
+	    <input type="hidden" id="captchaId" name="captchaId" value=""/>
+	    {{'agreed'|translate}}
+	  </label>
+  	  <button class="button button-block button-positive" ng-click="doRegister()">
+	  	Submit
+	  </button>
+  	</div>
+  	<div class="footer-space"/>
+  </ion-content>
+</ion-view>

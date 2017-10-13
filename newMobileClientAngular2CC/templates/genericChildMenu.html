@@ -1,0 +1,110 @@
+<ion-view cache-view="false" view-title="{{title}}">
+  <ion-content class="simobi-background-content">
+<!--     <ion-list> -->
+<!--       <ion-item ng-repeat="mainMenu in mainMenus | inArray:filterBy:'lvlMenu'" ng-click="mainMenu.functionMenu"> -->
+<!--         {{mainMenu.name}} -->
+<!--       </ion-item> -->
+<!--     </ion-list> -->
+
+<!-- 	<div ng-repeat="mainMenu in mainMenus | inArray:filterBy:'lvlMenu'"> -->
+	<div>	
+      <ion-list>
+        <div class="list list-inset">
+          <a class="item item-icon-right item-text-wrap" menu-close ng-repeat="mainMenu in mainMenus | inArray:filterBy:'lvlMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'2',mainMenu.id)">
+            <!-- <img ng-src="css/img-app/{{mainMenu['icon']}}"> -->
+            <div valign="center" style="vertical-align:top;padding-top:0px;padding-left:5px;" ><h2>{{mainMenu.code | translate}}</h2></div>
+            <i class="icon ion-chevron-right icon-simobi-ionic-verysmall"></i>
+          </a>
+        </div>
+      </ion-list>
+
+
+  		<!-- <ion-list>
+          <ion-item menu-close ng-repeat="mainMenu in mainMenus | inArray:filterBy:'lvlMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'2',mainMenu.id)">
+              {{mainMenu.code | translate}} -->
+            <!--table width='100%' border='0' cellspacing='0' cellpadding='0'>
+                <tr>
+                  <td ng-if="itIcon == true" align="left" width="15%" style="vertical-align:top;">
+                    <img ng-src="css/img-app/{{mainMenu['icon']}}" width="55px" height="40px">
+                  </td>
+                  <td ng-if="darkIcon == true" align="left" width="15%" style="vertical-align:top;">
+                    <img ng-src="css/img-app-dark/{{mainMenu['icon']}}" width="55px" height="40px">
+                  </td>
+                  <td ng-if="markomIcon == true" align="left" width="15%" style="vertical-align:top;">
+                    <img ng-src="css/img-app/{{mainMenu['icon']}}" width="40px" height="40px">
+                  </td>
+
+                  <td align="left" width="90%" style="vertical-align:top;padding-top:10px;" class="font-simobi-black-childMenu">
+                 		 &nbsp;{{mainMenu.code | translate}}
+                  </td>
+                  <td align="center" width="10%" style="vertical-align:top;padding-top:10px;" >
+                  	&gt;
+                  </td>
+                </tr>
+              </table-->
+          <!-- </ion-item>
+        </ion-list> -->
+	
+	
+	
+	
+<!-- 	    <div class="row" ng-if="$even"> -->
+<!-- 			<div class="col col-50"> -->
+<!-- 	        	<div style="margin: 0 auto; width:100px"> -->
+<!-- 	        		<table style="margin: 0px auto;"> -->
+<!-- 	        			<tr> -->
+<!-- 	        				<td ng-if="itIcon == true" class="defaultIcon-background" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'2',mainMenu.id)"> -->
+<!-- 	        					<img src="css/img-app/{{mainMenu.icon}}"> -->
+<!-- 	        				</td> -->
+<!-- 	        				<td ng-if="markomIcon == true" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'2',mainMenu.id)"> -->
+<!-- 	        					<img src="css/img-app-markom-border/{{mainMenu.icon}}"> -->
+<!-- 	        				</td> -->
+<!-- 	        			</tr> -->
+<!-- 	        			<tr> -->
+<!-- 	        				<td align="center" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'2',mainMenu.id)"> -->
+<!-- 	        					<p ng-if="themeMode == 'standar'" class="font-simobi-black">{{mainMenus[$index]['code'] | translate}}</p> -->
+<!-- 	        					<p ng-if="themeMode == 'style1'" class="font-simobi-white">{{mainMenus[$index]['code'] | translate}}</p> -->
+<!-- 	        				</td> -->
+<!-- 	        			</tr> -->
+<!-- 	        		</table> -->
+<!-- 	        	</div> -->
+<!-- 	        </div> -->
+<!-- 			<div class="col col-50"> -->
+<!-- 	        	<div style="margin: 0 auto; width:100px"> -->
+<!-- 	        		<table style="margin: 0px auto;"> -->
+<!-- 	        			<tr ng-if="mainMenus[$index + 1]['icon']" > -->
+<!-- 	        				<td> -->
+<!-- 	        					<table style="margin: 0px auto;"> -->
+<!-- 	        						<tr> -->
+<!-- 	        							<td ng-if="itIcon == true" class="defaultIcon-background" ng-click="clickGrandMenu(mainMenus[$index + 1]['code'],mainMenus[$index + 1]['nodeList'],mainMenus[$index + 1]['functionMenu'],'2',mainMenus[$index + 1]['id'])"> -->
+<!-- 	        								<img src="css/img-app/{{mainMenus[$index + 1]['icon']}}"> -->
+<!-- 	 									</td> -->
+<!-- 	        						</tr> -->
+<!-- 	        					</table> -->
+<!-- 	        				</td> -->
+<!-- 	        			</tr> -->
+<!-- 	        			<tr ng-if="mainMenus[$index + 1]['icon']" > -->
+<!-- 	        				<td> -->
+<!-- 	        					<table style="margin: 0px auto;"> -->
+<!-- 	        						<tr> -->
+<!-- 	        							<td ng-if="markomIcon == true" ng-click="clickGrandMenu(mainMenus[$index + 1]['code'],mainMenus[$index + 1]['nodeList'],mainMenus[$index + 1]['functionMenu'],'2',mainMenus[$index + 1]['id'])"> -->
+<!-- 	        								<img src="css/img-app-markom-border/{{mainMenus[$index + 1]['icon']}}"> -->
+<!-- 	        							</td> -->
+<!-- 	        						</tr> -->
+<!-- 	        					</table> -->
+<!-- 	        				</td> -->
+<!-- 	        			</tr> -->
+<!-- 	        			<tr> -->
+<!-- 	        				<td align="center" ng-if="mainMenus[$index + 1]['name']" ng-click="clickGrandMenu(mainMenus[$index + 1]['code'],mainMenus[$index + 1]['nodeList'],mainMenus[$index + 1]['functionMenu'],'2',mainMenus[$index + 1]['id'])"> -->
+<!-- 	        					<p ng-if="themeMode == 'standar'" class="font-simobi-black">{{mainMenus[$index + 1]['code'] | translate}}</p> -->
+<!-- 	        					<p ng-if="themeMode == 'style1'" class="font-simobi-white">{{mainMenus[$index + 1]['code'] | translate}}</p> -->
+<!-- 	        				</td> -->
+<!-- 	        			</tr> -->
+<!-- 	        		</table> -->
+<!-- 	        	</div> -->
+<!-- 	        </div> -->
+<!-- 	    </div> -->
+	</div>
+	<div class="footer-space"/>
+  </ion-content>
+</ion-view>

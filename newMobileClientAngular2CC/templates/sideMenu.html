@@ -1,0 +1,191 @@
+<ion-side-menus enable-menu-with-back-views="true"> <!-- enable-menu-with-back-views="true" -->
+  <ion-side-menu-content drag-content="toggledrag" >
+  <!-- <ion-side-menu-content edge-drag-threshold="false" drag-content="false"> -->
+    <ion-nav-bar class="bar-stable">
+      <!-- <ion-nav-back-button ng-click="backMenu();">
+      </ion-nav-back-button> -->
+
+      <ion-nav-buttons side="right">
+
+       <i ng-if="showLogout != true" id="butNetworkIndicator" ng-class="{'button button-icon button-clear ion-wifi icon-disconnect': !networkIndicator, 'button button-icon button-clear ion-wifi icon-connect': networkIndicator}" ng-click="doCheckConnection()" ></i>
+
+       <i ng-if="showLogout == true" id="butLogout" class="button button-icon button-clear ion-power" ng-click="logout()" ></i>
+
+      	<!-- <i id="butNetworkIndicator" ng-class="{'button-red-network-indicator': !networkIndicator, 'button-green-network-indicator': networkIndicator}" ng-click="doCheckConnection()"></i> -->
+<!-- 		    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+<!--         <button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="right"> -->
+<!--         </button> -->
+      </ion-nav-buttons>
+      
+      <ion-nav-buttons side="left" ng-controller="AppCtrl">
+        <button ng-if="uiRouterState.current.name == 'app.main'" class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+        <i ng-if="uiRouterState.current.name != 'app.main'" id="backMenu" class="button button-icon button-clear ion-android-arrow-back" ng-click="backMenu()" ></i>
+      </ion-nav-buttons>
+      
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+  
+
+  <!-- ion-side-menu side="right">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Right Menu</h1>
+    </ion-header-bar>
+    <ion-content>
+
+        <!-- <ion-list>
+          <div class="list list-inset">
+              <a class="item item-avatar-simobi-side item-icon-right item-text-wrap" menu-close ng-repeat="mainMenu in mainMenus | inArray:rightMenu:'rightMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+                <img valign="center" ng-src="css/img-app/{{mainMenu['icon']}}">
+                <div valign="center" style="vertical-align:top;padding-left:8px;"><label class"font-simobi-black-childMenu">{{mainMenu.code | translate}}</label></div>
+                <i class="icon ion-chevron-right icon-simobi-sidemenu-small"></i>
+              </a>
+          </div>
+        </ion-list> >
+
+          <ion-list>
+            <ion-item class="itemSimobi" menu-close ng-repeat="mainMenu in mainMenus | inArray:rightMenu:'rightMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+              <table width='100%' border='0' cellspacing='0' cellpadding='0'>
+                  <tr>
+
+                    <td ng-if="itIcon == true" align="left" width="20%" style="vertical-align:top;padding-left:8px;">
+                      <img ng-src="css/img-app/{{mainMenu['icon']}}" width="55px" height="40px">
+                    </td>
+                    <td ng-if="darkIcon == true" align="left" width="20%" style="vertical-align:top;padding-left:8px;">
+                      <img ng-src="css/img-app-dark/{{mainMenu['icon']}}" width="55px" height="40px">
+                    </td>
+                    <td ng-if="markomIcon == true" align="left" width="20%" style="vertical-align:top;padding-left:8px;">
+                      <img ng-src="css/img-app/{{mainMenu['icon']}}" width="40px" height="40px">
+                    </td>
+
+                    <td width="80%" style="vertical-align:top;padding-top:10px;" class="font-simobi-black-childMenu">
+                   		 &nbsp;{{mainMenu.code | translate}} 
+                    </td>
+
+                    <td align="right" style="padding-top:10px;padding-right:10px;">
+                      <i class="icon ion-chevron-right icon-simobi-sidemenu-small"></i>
+                    </td>
+
+                  </tr>
+                </table>
+            </ion-item>
+          </ion-list>
+
+    </ion-content>
+  </ion-side-menu-->
+  
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable">
+       <h1 class="title"><img src="css/img/logo-amb.png" height="40"></h1>
+    </ion-header-bar>
+    <ion-content>
+
+          <!-- <ion-list>
+            <div class="list list-inset">
+                <a class="item item-avatar-simobi-side item-icon-right item-text-wrap" menu-close ng-repeat="mainMenu in mainMenus | inArray:filterBy:'lvlMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+                  <img ng-src="css/img-app/{{mainMenu['icon']}}">
+                  <div valign="center" style="vertical-align:top;padding-top:0px;padding-left:8px;"><label class"font-simobi-black-childMenu">{{mainMenu.code | translate}}</label></div>
+                  <i class="icon ion-chevron-right icon-simobi-sidemenu-small"></i>
+                </a>
+            </div>
+          </ion-list> -->
+
+          <!-- <ion-list>
+            <ion-item class="itemSimobi" menu-close ng-repeat="mainMenu in mainMenus | inArray:filterBy:'lvlMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+              <table width='100%' border='0' cellspacing='0' cellpadding='0'>
+                  <tr>
+                    <td ng-if="itIcon == true" align="left" width="20%" style="vertical-align:top;">
+                      <img ng-src="css/img-app/{{mainMenu['icon']}}" width="55px" height="40px">
+                    </td>
+                    <td ng-if="darkIcon == true" align="left" width="20%" style="vertical-align:top;">
+                      <img ng-src="css/img-app-dark/{{mainMenu['icon']}}" width="55px" height="40px">
+                    </td>
+                    <td ng-if="markomIcon == true" align="left" width="20%" style="vertical-align:top;">
+                      <img ng-src="css/img-app/{{mainMenu['icon']}}" width="40px" height="40px">
+                    </td>
+
+                    <td align="left" width="70%" style="vertical-align:top;padding-top:10px;" class="font-simobi-black-childMenu">
+                   		 &nbsp;{{mainMenu.code | translate}}
+                    </td>
+                    <td align="center" width="10%" style="vertical-align:top;padding-top:10px;" >
+                    	&gt;
+                    </td>
+                  </tr>
+                </table>
+            </ion-item>
+          </ion-list> -->
+          
+          <div ng-if="themeMode == 'standar' || themeMode == 'list'">
+          	<ion-list>
+	            <ion-item class="itemSimobi" menu-close ng-repeat="mainMenu in mainMenus | inArray:filterBy:'lvlMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+	              <div ng-if="mainMenu.code != 'advertisement'">
+	                <table width='100%' border='0' cellspacing='0' cellpadding='0'>
+	                    <tr>
+	
+	                      <td ng-if="itIcon == true" align="left" width="20%" style="vertical-align:top;padding-left:8px;">
+	                        <!-- <img ng-src="css/img-app/{{mainMenu['icon']}}" width="55px" height="40px"> -->
+	                        <img ng-src="css/img-app/{{mainMenu['icon']}}" width="40px" height="35px">
+	                      </td>
+	                      <td ng-if="darkIcon == true" align="left" width="20%" style="vertical-align:top;padding-left:8px;">
+	                        <img ng-src="css/img-app-dark/{{mainMenu['icon']}}" width="55px" height="40px">
+	                      </td>
+	                      <td ng-if="markomIcon == true" align="left" width="20%" style="vertical-align:top;padding-left:8px;">
+	                        <img ng-src="css/img-app/{{mainMenu['icon']}}" width="40px" height="40px">
+	                      </td>
+	
+	                      <td width="80%" style="vertical-align:top;padding-top:10px;" class="font-simobi-black-childMenu">
+	                         &nbsp;{{mainMenu.code | translate}} 
+	                      </td>
+	
+	                      <td align="right" style="padding-top:10px;padding-right:10px;">
+	                        <i class="icon ion-chevron-right icon-simobi-sidemenu-small"></i>
+	                      </td>
+	
+	                    </tr>
+	                  </table>
+	                </div>
+	            </ion-item>
+	          </ion-list>
+          </div>
+			
+		  <div ng-if="themeMode == 'colorGrid'">
+          	<ion-list>
+	            <ion-item class="itemSimobi" menu-close ng-repeat="mainMenu in mainMenus | inArray:filterBy:'lvlMenu'" ng-click="clickGrandMenu(mainMenu.code,mainMenu.nodeList,mainMenu.functionMenu,'1',mainMenu.id)">
+	              <div ng-if="mainMenu.code != 'advertisement'">
+	                <table width='100%' border='0' cellspacing='0' cellpadding='0'>
+	                    <tr>
+	
+	                      <td ng-if="itIcon == true" align="left" width="20%" style="vertical-align:top;padding-left:8px;">
+	                        <!-- <img ng-src="css/img-app/{{mainMenu['icon']}}" width="55px" height="40px"> -->
+	                        <img ng-src="css/img-app-colorGrid/{{mainMenu['icon']}}" width="35px" height="35px">
+	                      </td>
+	                      <td ng-if="darkIcon == true" align="left" width="20%" style="vertical-align:top;padding-left:8px;">
+	                        <img ng-src="css/img-app-dark/{{mainMenu['icon']}}" width="55px" height="40px">
+	                      </td>
+	                      <td ng-if="markomIcon == true" align="left" width="20%" style="vertical-align:top;padding-left:8px;">
+	                        <img ng-src="css/img-app/{{mainMenu['icon']}}" width="40px" height="40px">
+	                      </td>
+	
+	                      <td width="80%" style="vertical-align:top;padding-top:10px;" class="font-simobi-black-childMenu">
+	                         &nbsp;{{mainMenu.code | translate}} 
+	                      </td>
+	
+	                      <td align="right" style="padding-top:10px;padding-right:10px;">
+	                        <i class="icon ion-chevron-right icon-simobi-sidemenu-small"></i>
+	                      </td>
+	
+	                    </tr>
+	                  </table>
+	                </div>
+	            </ion-item>
+	          </ion-list>
+          </div>
+          
+
+      <div class="footer-space"/>
+    </ion-content>
+  </ion-side-menu>
+  
+</ion-side-menus>

@@ -1,0 +1,22 @@
+<ion-view view-title="{{'location_branch'|translate}}">
+  <ion-content class="has-header" scroll="false">
+  	<form style="width: 100%;height:100%">
+		<div id="map_canvas" style="width: 100%;height:70%">
+		    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+		    	
+		    	<ui-gmap-markers models="markers" coords="'self'" icon="'icon'"  events="markers.events" >
+		    	<!--  <ui-gmap-window ng-repeat="marker in markers" coords="selectedMarker" show="windowOptions.show" closeClick="closeClick()">
+	                <div>{{marker.title}}</div>
+	            </ui-gmap-window> -->
+	        	</ui-gmap-markers>
+		    </ui-gmap-google-map>
+		</div>
+     	<ion-scroll id="panelScroll" overflow-scroll="true" zooming="false" direction="y" style="height:30%;width:100%;">
+			<ion-item class="button-assertive" ng-repeat="branchListLocationModel in branchListLocation" ng-click="locationBranch({{branchListLocationModel}});">
+					<!-- <img src="css/img-map/{{branchListLocationModel.branchType}}.png" width="5%" height="5%"/> |  -->{{branchListLocationModel.branchAddress}}
+			</ion-item>
+		</ion-scroll>
+	</form>
+	<div class="footer-space"/>
+  </ion-content>
+ </ion-view>

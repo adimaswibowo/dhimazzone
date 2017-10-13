@@ -1,0 +1,109 @@
+<ion-view cache-view="false" view-title="Card Limit Result">
+  <ion-content class="simobi-background-content">
+  
+	<div class="list list-inset">
+		<div>	
+			<table width="100%">
+			  <hr class="lineHR_Sign">
+		      <tr>
+		        <td>		      	
+	        	<!-- <td style="vertical-align:top;padding-top:45px;"> -->
+			    	<div>
+			         <!--  <div class="row">
+		          		  <div class="col" align="center">
+						  	{{'description' | translate}}
+						  </div>
+						  <div class="col" align="center">
+						  	{{'existingLimit' | translate}}
+						  </div>
+						  <div class="col" align="center">
+						  	{{'newLimit' | translate}}
+						  </div>
+						  <div class="col" align="center">
+						  	{{'currency' | translate}}
+						  </div>
+						  <div class="col" align="center">
+						  	{{'status' | translate}}
+						  </div>
+				      </div> -->
+			    	  <hr class="lineHR_Sign">
+	  			      <ion-item class="item-text-wrap" ng-model="cardLimitNewSelect" ng-repeat="cardLimitNewSelect in limitCard.cardLimitResult" id="{{cardLimitNewSelect.limitId}}">
+					 	<!-- <div class="row">
+					 	  <div class="col" align="left">
+						  	{{cardLimitNewSelect.description}}
+						  </div>
+						  <div class="col" align="right">
+						    {{cardLimitNewSelect.limitValue}}
+						  </div>
+						  <div class="col" align="right">
+						  	{{cardLimitNewSelect.limitValueNew}}
+						  </div>
+						  <div class="col" align="center">
+						    {{cardLimitNewSelect.limitCurr}}
+						  </div>
+						  <div class="col" align="center">
+						  	{{cardLimitNewSelect.errorList}}
+						  </div>
+					    </div> -->
+					    <div class="row">
+					 	  <div class="col bgrLineGrey" align="left">
+						  	{{cardLimitNewSelect.description}}
+						  </div>
+						</div>
+						
+						<div class="row">
+							<div class="col txtNameAccSumDet" align="left">
+						  		{{'existingLimit' | translate}}
+						  	</div>
+						  	<div class="col txtNameAccSumValue" align="right">
+						  		 {{cardLimitNewSelect.limitValue}}
+						  	</div>
+						</div>
+						<div class="row">
+							<div class="col txtNameAccSumDet" align="left">
+						  		{{'newLimit' | translate}}
+						  	</div>
+						  	<div class="col txtNameAccSumValue" align="right">
+						  			{{cardLimitNewSelect.limitValueNew}}
+						  	</div>
+
+						  	<!-- <div class="col" align="center">
+						  		{{cardLimitSelect.limitCurr}}
+						 	</div> -->
+						   <!-- 	<div class="col" align="center">
+							<button class="btn-submit-desktop" ng-click="showChangeLimit({{cardLimitSelect}});" >
+								{{'change' | translate}}
+							</button>
+						  </div> -->
+					    </div>
+					    <div class="row">
+					    	<div class="col txtNameAccSumDet" align="left">
+						  		 Currency
+						  	</div>
+						  	<div class="col txtNameAccSumValue" align="right">
+						  		 {{cardLimitNewSelect.limitCurr}}
+						  	</div>
+						</div>
+					    <div class="row">
+							<div class="col txtNameAccSumDet" align="left">
+						  		Status  
+						  	</div>
+						  	<div class="col txtNameAccSumValue" align="right">
+						  		 	{{cardLimitNewSelect.errorList}}
+						  	</div>
+						</div>
+					  </ion-item>    
+				  </div>
+			    </td>
+			  </tr>
+			</table>	
+		</div>
+	</div>
+	
+	<button class="button button-block button-positive" ng-click="doBack();">
+	  	{{'button_back' | translate}}
+	</button>
+	
+	<div class="footer-space"/>
+  </ion-content>
+</ion-view>

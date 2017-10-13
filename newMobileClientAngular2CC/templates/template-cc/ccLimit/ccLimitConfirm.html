@@ -1,0 +1,110 @@
+<ion-view cache-view="false" view-title="Card Limit Confirm">
+  <ion-content class="simobi-background-content">
+  
+	<!-- <div class="list list-inset">
+		<label class="item">
+			Existing Limit: {{userLimitExisting}} <br>
+			New Limit: {{newLimit}}
+		</label>
+	</div> -->
+	
+	<!-- <div class="row">
+	  <div class="col">
+	  <ion-item class="item-text-wrap" ng-model="cardLimitExistingSelect" ng-repeat="cardLimitExistingSelect in limitCard.cardLimitExisting" id="{{cardLimitExistingSelect.limitId}}">
+		       Credit Limit Existing : {{cardLimitExistingSelect.limitValue}}
+	  </ion-item>
+	  </div>
+	  <div class="col">
+	  <ion-item class="item-text-wrap" ng-model="cardLimitNewSelect" ng-repeat="cardLimitNewSelect in limitCard.cardLimitNew" id="{{cardLimitNewSelect.limitId}}">
+		       Credit Limit New : {{cardLimitNewSelect.limitValue}}
+	  </ion-item>
+	  </div>
+	</div> -->
+
+	<div class="list list-inset">
+		<div>	
+			<table width="100%">
+			 <!--  <hr class="lineHR_Sign"> -->
+		      <tr>
+		        <td>		      	
+		        <!-- <td style="vertical-align:top;padding-top:45px;"> -->
+		          <div>
+	          		<!-- <div class="row">
+		          	  <div class="col" align="center">
+					  	{{'description' | translate}}
+					  </div>
+					  <div class="col" align="center">
+					  	{{'existingLimit' | translate}}
+					  </div>
+					  <div class="col" align="center">
+					  	{{'newLimit' | translate}}
+					  </div>
+					  <div class="col" align="center">
+					  	{{'currency' | translate}}
+					  </div>
+				    </div> -->
+				    <hr class="lineHR_Sign">
+	  			    <ion-item class="item-text-wrap" ng-model="cardLimitNewSelect" ng-repeat="cardLimitNewSelect in limitCard.cardLimitNew" id="{{cardLimitNewSelect.limitId}}">
+				 	<!-- <div class="row">
+					  <div class="col" align="left">
+					    {{cardLimitNewSelect.description}}
+					  </div>
+					  <div class="col" align="right">
+					    {{cardLimitNewSelect.limitValue}}
+					  </div>
+					  <div class="col" align="right">
+					    {{cardLimitNewSelect.limitValueNew}}
+					  </div>
+					  <div class="col" align="center">
+					    {{cardLimitNewSelect.limitCurr}}
+					  </div>
+				    </div> -->
+				    <div class="row">
+					 	  <div class="col bgrLineGrey" align="left">
+						  	 {{cardLimitNewSelect.description}}
+						  </div>
+						</div>
+						
+						<div class="row">
+							<div class="col txtNameAccSumDet" align="left">
+						  		{{'existingLimit' | translate}}
+						  	</div>
+						  	<div class="col txtNameAccSumValue" align="right">
+						  		 {{cardLimitNewSelect.limitValue}}
+						  	</div>
+						</div>
+						<div class="row">
+							<div class="col txtNameAccSumDet" align="left">
+						  		{{'newLimit' | translate}}
+						  	</div>
+						  	<div class="col txtNameAccSumValue" align="right">
+						  		  {{cardLimitNewSelect.limitValueNew}}
+						  	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col txtNameAccSumDet" align="left">
+						  		 Currency
+						  	</div>
+						  	<div class="col txtNameAccSumValue" align="right">
+						  		 {{cardLimitNewSelect.limitCurr}}
+						  	</div>
+						</div>
+					</ion-item>    
+				  </div>
+			    </td>
+			  </tr>
+			</table>
+		</div>
+	</div>
+
+	<div id='securityTypeTokenInput' class='securityType-TokenInput'></div>
+	
+	<input type='text' style='visibility: hidden;' id='transRefNum' name='transRefNum' ng-model='transRefNum'/>
+	
+	<button class="button button-block button-positive" ng-click="doRequestChangeLimit();">
+	  	{{'button_confirm' | translate}}
+	</button>
+	
+	<div class="footer-space"/>
+  </ion-content>
+</ion-view>

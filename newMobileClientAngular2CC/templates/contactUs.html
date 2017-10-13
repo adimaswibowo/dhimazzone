@@ -1,0 +1,59 @@
+<ion-view cache-view="false" view-title="{{'contact_us'|translate}}">
+  <ion-content class="simobi-background-content">
+  	<div class="list list-inset">
+
+  		<div class="card">
+
+		  	<!-- <a class="item item-icon-left" href="tel:+622150188888"> -->
+<!-- 		  	<a class="item item-icon-left">
+			    <i class="icon ion-android-call"></i>
+			    {{'amb_care'|translate}}
+			    <span class="item-note">
+			    {{'phone_amb_care'|translate}}
+			    </span>
+		    </a> -->
+		    <a class="item item-icon-left" onclick="window.open('http://www.asiamerchantbank.com', '_system');">
+			    <i class="icon ion-android-globe"></i>
+			    {{'company_website_address'|translate}}
+			    <span class="item-note">
+			      	{{'company_website_address'|translate}}
+			    </span>
+		    </a>
+ 		    <a class="item item-icon-left" href="mailto:customer@asiamerchantbank.com">
+ 			    <i class="icon ion-email"></i>
+ 			    {{'mail_us_at'|translate}}
+ 			    <span class="item-note">
+ 			    {{'mail_us_address'|translate}}
+			    </span>
+ 		    </a>
+		    <a class="item item-icon-left">
+			    <i class="icon ion-information-circled"></i>
+			    {{'version'|translate}}
+			    <span class="item-note">
+			      	<div ng-bind-html="version"></div>
+			    </span>
+		    </a>
+
+		  <!-- <div class="item item-text-wrap">
+		    {{'bank_simas_care'|translate}} <br>
+		    <b> {{'phone_simas_care'|translate}}</b> <br><br>
+		    {{'company_website'|translate}} <br>
+		    <b>{{'company_website_address'|translate}}</b> <br><br>
+		    {{'mail_us_at'|translate}} <br>
+		    <b>{{'mail_us_address'|translate}}</b> <br><br>
+		    {{'version'|translate}} <br>
+		    <b><div ng-bind-html="version"></div></b>
+		  </div> -->
+		</div>
+		<!--button class="button button-primary button-block " ng-click="checkForUpdates()">
+		  {{'check_update'|translate}}
+		</button>
+		<button class="button button-stable button-block button-pulse" ng-if="hasUpdate" ng-click="doUpdate()">
+		   {{'download_update'|translate}}
+		</button-->
+		<label ng-if="PROD == false" ng-click="changeIpAddr()" style="display: block; width: 100px;">DEV</label>
+		<label ng-if="PROD == true" ng-click="changeIpAddr()" style="display: block; width: 100px;">&nbsp;</label>
+	</div>
+	<div class="footer-space"/>
+  </ion-content>
+</ion-view>

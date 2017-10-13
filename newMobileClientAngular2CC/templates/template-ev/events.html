@@ -1,0 +1,11 @@
+<ion-view title="{{'events'|translate}}">
+  <ion-content class="has-header" scroll="false">
+  	<form style="width: 100%;height:100%">
+	<ion-scroll id="panelScroll" overflow-scroll="true" zooming="false" direction="xy" style="height:100%;width:100%;">
+				<br>
+				<br>
+  				<iframe ng-src="{{iframeUrl | trusted}}" allowtransparency="1" frameborder="1" scrolling="No" height="33%" width="760" iframe-onload="iframeLoadedCallBack()"></iframe><br>
+    </ion-scroll>
+    </form>
+  </ion-content>
+</ion-view>

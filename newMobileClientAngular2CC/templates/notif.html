@@ -1,0 +1,19 @@
+<ion-view view-title="{{'notifications'|translate}}">
+  <ion-content class="simobi-background-content">
+<!--   	<div class="list"> -->
+<!--   		<div class="card"> -->
+<!-- 		    <div ng-bind-html="notifications"></div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+	<ion-list>
+<!--  <ion-item ng-repeat="notif in notifications" ng-click="detailNotification({{notif.timeMilis}});"> -->
+	  <ion-item ng-repeat="notif in notifications" href="#/app/notif/{{notif.timeMilis}}">
+	  	{{notif.title}}
+	  </ion-item>
+<!--       <ion-item ng-repeat="notif in notifications" href="#/app/notif/{{notif.actions}}"> -->
+<!--         {{notif.title}} -->
+<!--       </ion-item> -->
+    </ion-list>
+	<div class="footer-space"/>
+  </ion-content>
+</ion-view>

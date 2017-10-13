@@ -1,0 +1,24 @@
+<ion-view cache-view="false" view-title="{{'update_info'|translate}}">
+  <ion-content class="simobi-background-content">
+  	<div class="list list-inset">
+		<div class="card">
+		  <div class="item item-text-wrap">
+		    {{'message_dayCountOne'|translate}} <br>
+		    <b><div ng-bind-html="dayCount"></div></b> {{'message_dayCountTwo'|translate}}<br><br>
+		    {{'message_latestVersion'|translate}} <br>
+		    <b><div ng-bind-html="latestVersion"></div></b> <br><br>
+		    {{'message_change_list'|translate}} <br>
+		    <b><div ng-bind-html="description"></div></b> <br><br>
+		    {{'message_currentVersion'|translate}} <br>
+		    <b><div ng-bind-html="version"></div></b>
+		  </div>
+		</div>
+		<button class="button button-block button-positive" ng-click="downloadApps()">
+		 {{'download_update'|translate}}
+		</button>
+		<button class="button button-block button-positive" ng-if="status == 'semiUpdate'" ng-click="login()">
+		  Login
+		</button>
+	</div><br>
+  </ion-content>
+</ion-view>

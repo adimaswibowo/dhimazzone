@@ -1,0 +1,37 @@
+<!-- <div ng-controller="addInbankTransferListInputCtrl"> -->
+<ion-view cache-view="false" view-title="{{'uangku_transfer_list'|translate}}">
+	<ion-content class="simobi-background-content">
+		<div class="list list-inset">
+		  <label class="item item-input">
+		    <input type="text" id="targetAccount" name="targetAccount" maxlength="20" size="20" placeholder="{{'mobile_number' |translate}}" ng-model="addInbankTL.targetAccount"/>
+		  </label>
+		  <label class="item item-input">
+		    <input type="text" id="description" name="description" maxlength="20" size="20" placeholder="{{'transaction_description' |translate}}" ng-model="addInbankTL.description"/>
+		  </label>
+		  <button class="button button-block button-positive" ng-click="doAddUangkuTransferListConfirm();">
+		  	Add
+		  </button>
+		</div>
+<!-- 		<div> -->
+<!-- 			<table border="0"> -->
+<!-- 				<tr> -->
+<!-- 					<td>  -->
+<!-- 						<input type="text" id="targetAccount" name="targetAccount" maxlength="20" size="20" placeholder="Target Account Number" /> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 					<td> -->
+<!-- 						<input type="text" id="description" name="description" maxlength="20" size="20" placeholder="Description" /> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 					<td> -->
+<!-- 						<br> -->
+<!-- 						<input type="button" name="button" id="button" value="Add" ng-click="doAddInbankTransferListConfirm();" />  -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 			</table> -->
+<!-- 		</div>	 -->
+	<div class="footer-space"/>
+	</ion-content>
+</ion-view>
